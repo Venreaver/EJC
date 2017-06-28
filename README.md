@@ -4,7 +4,7 @@
 1. [task_01](https://github.com/Venreaver/EJC/tree/master/src/main/java/task_01) – **done**  
    Simple app with `Hello World!`
 2. [task_02](https://github.com/Venreaver/EJC/tree/master/src/main/java/task_02) – **done**  
-   Duck Race app
+   Duck Race is Casino-style console game with Strategy Pattern inside
 
 ## Additional Tasks
 1. [add_01](https://github.com/Venreaver/EJC/tree/master/src/main/java/add_01) - **done**  
