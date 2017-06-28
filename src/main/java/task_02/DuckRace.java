@@ -14,6 +14,8 @@ public class DuckRace {
     public static final int MIN_DUCK_SPEED = 10;
     public static final int RACE_TIME = 10;
     public static final int DUCKS_COUNT = 5;
+    public static final int BET_SUM = 100;
+
     private int playerBank;
     private int raceBank;
     private List<DuckRacer> raceGroupList;
@@ -77,8 +79,8 @@ public class DuckRace {
                         case 4:
                         case 5:
                             createDucks();
-                            playerBank -= 100;
-                            raceBank += 100;
+                            playerBank -= BET_SUM;
+                            raceBank += BET_SUM;
                             System.out.println("You chose duck № " + choice);
                             startRace();
                             int maxDistance = findWinners();
@@ -92,8 +94,8 @@ public class DuckRace {
                                     raceGroupList.get(i).getDuck().display();
                                     if (choice == i + 1) {
                                         System.out.print(" - PLAYER'S CHOICE");
-                                        raceBank -= 200;
-                                        playerBank += 200;
+                                        raceBank -= BET_SUM * 2;
+                                        playerBank += BET_SUM * 2;
                                         winOrLose = "You won this race! Congrats!";
                                     }
                                     System.out.println();
