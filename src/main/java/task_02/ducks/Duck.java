@@ -1,4 +1,7 @@
-package task_02;
+package task_02.ducks;
+
+import task_02.flybehaviors.FlyBehavior;
+import task_02.quackbehaviors.QuackBehavior;
 
 public abstract class Duck {
     private FlyBehavior flyBehavior;
@@ -10,8 +13,8 @@ public abstract class Duck {
         System.out.println("Все утки могут плавать! Даже искуственные");
     }
 
-    public void performFly() {
-        flyBehavior.fly();
+    public int performFly() {
+        return flyBehavior.fly();
     }
 
     public void performQuack() {

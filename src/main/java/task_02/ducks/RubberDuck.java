@@ -1,4 +1,7 @@
-package task_02;
+package task_02.ducks;
+
+import task_02.flybehaviors.FlyNoWay;
+import task_02.quackbehaviors.Squeak;
 
 public class RubberDuck extends Duck{
     public RubberDuck() {

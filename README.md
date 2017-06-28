@@ -3,7 +3,7 @@
 ## Home Tasks
 1. [task_01](https://github.com/Venreaver/EJC/tree/master/src/main/java/task_01) – **done**  
    Simple app with `Hello World!`
-2. [task_02](https://github.com/Venreaver/EJC/tree/master/src/main/java/task_01) – **in progress**  
+2. [task_02](https://github.com/Venreaver/EJC/tree/master/src/main/java/task_02) – **in progress**  
    Duck Race app
 
 ## Additional Tasks

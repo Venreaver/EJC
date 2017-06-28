@@ -1,4 +1,4 @@
-package task_02;
+package task_02.quackbehaviors;
 
 public class MuteQuack implements QuackBehavior{
     @Override
