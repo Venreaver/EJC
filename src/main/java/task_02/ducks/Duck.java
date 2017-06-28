@@ -7,7 +7,7 @@ public abstract class Duck {
     private FlyBehavior flyBehavior;
     private QuackBehavior quackBehavior;
 
-    abstract void display();
+    public abstract void display();
 
     public void swim() {
         System.out.println("Все утки могут плавать! Даже искуственные");
@@ -27,5 +27,9 @@ public abstract class Duck {
 
     public void setQuackBehavior(QuackBehavior qb) {
         quackBehavior = qb;
+    }
+
+    public FlyBehavior getFlyBehavior() {
+        return flyBehavior;
     }
 }

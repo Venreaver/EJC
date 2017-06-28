@@ -1,7 +1,7 @@
 package task_02.ducks;
 
-import task_02.quackbehaviors.FakeQuack;
 import task_02.flybehaviors.FlyRocketPowered;
+import task_02.quackbehaviors.FakeQuack;
 
 public class RocketDuck extends Duck {
     public RocketDuck() {
@@ -10,7 +10,8 @@ public class RocketDuck extends Duck {
     }
 
     @Override
-    void display() {
-        System.out.println("Я - утка-ракета!");
+    public void display() {
+        System.out.print("Я - утка-ракета! ");
+        getFlyBehavior().displayFlyBehavior();
     }
 }

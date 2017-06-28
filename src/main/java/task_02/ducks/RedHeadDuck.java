@@ -1,7 +1,6 @@
 package task_02.ducks;
 
 import task_02.flybehaviors.FlyByJump;
-import task_02.flybehaviors.FlyWithWings;
 import task_02.quackbehaviors.Quack;
 
 public class RedHeadDuck extends Duck {
@@ -11,7 +10,8 @@ public class RedHeadDuck extends Duck {
     }
 
     @Override
-    void display() {
-        System.out.println("Я – красноголовый нырок!");
+    public void display() {
+        System.out.print("Я – красноголовый нырок! ");
+        getFlyBehavior().displayFlyBehavior();
     }
 }
