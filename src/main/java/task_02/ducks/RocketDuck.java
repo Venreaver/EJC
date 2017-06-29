@@ -1,7 +1,7 @@
 package task_02.ducks;
 
-import task_02.flybehaviors.FlyRocketPowered;
-import task_02.quackbehaviors.FakeQuack;
+import task_02.fly.FlyRocketPowered;
+import task_02.quack.FakeQuack;
 
 public class RocketDuck extends Duck {
     public RocketDuck() {

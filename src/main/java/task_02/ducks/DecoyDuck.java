@@ -1,7 +1,7 @@
 package task_02.ducks;
 
-import task_02.flybehaviors.FlyNoWay;
-import task_02.quackbehaviors.MuteQuack;
+import task_02.fly.FlyNoWay;
+import task_02.quack.MuteQuack;
 
 public class DecoyDuck extends Duck {
     public DecoyDuck() {

@@ -1,4 +1,4 @@
-package task_02.flybehaviors;
+package task_02.fly;
 
 public class FlyNoWay implements FlyBehavior {
     @Override

@@ -1,4 +1,4 @@
-package task_02.quackbehaviors;
+package task_02.quack;
 
 public class FakeQuack implements QuackBehavior {
     @Override

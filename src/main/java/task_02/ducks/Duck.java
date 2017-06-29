@@ -1,7 +1,7 @@
 package task_02.ducks;
 
-import task_02.flybehaviors.FlyBehavior;
-import task_02.quackbehaviors.QuackBehavior;
+import task_02.fly.FlyBehavior;
+import task_02.quack.QuackBehavior;
 
 public abstract class Duck {
     private FlyBehavior flyBehavior;

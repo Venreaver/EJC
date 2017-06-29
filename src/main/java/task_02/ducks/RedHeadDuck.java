@@ -1,7 +1,7 @@
 package task_02.ducks;
 
-import task_02.flybehaviors.FlyByJump;
-import task_02.quackbehaviors.Quack;
+import task_02.fly.FlyByJump;
+import task_02.quack.Quack;
 
 public class RedHeadDuck extends Duck {
     public RedHeadDuck() {

@@ -1,7 +1,7 @@
 package task_02;
 
 import task_02.ducks.*;
-import task_02.flybehaviors.FlyByJump;
+import task_02.fly.FlyByJump;
 
 import java.io.BufferedReader;
 import java.io.IOException;
