@@ -10,7 +10,7 @@ public abstract class Duck {
     public abstract void display();
 
     public void swim() {
-        System.out.println("Все утки могут плавать! Даже искуственные");
+        System.out.println("All ducks float, even decoys!");
     }
 
     public int performFly() {

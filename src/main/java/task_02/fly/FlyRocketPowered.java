@@ -1,6 +1,6 @@
 package task_02.fly;
 
-import task_02.DuckRace;
+import task_02.racelogic.DuckRace;
 
 public class FlyRocketPowered implements FlyBehavior {
     @Override
@@ -12,6 +12,6 @@ public class FlyRocketPowered implements FlyBehavior {
 
     @Override
     public void displayFlyBehavior() {
-        System.out.print("Я лечу на ракете!");
+        System.out.print("I'm flying with a rocket!");
     }
 }

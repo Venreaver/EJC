@@ -11,7 +11,7 @@ public class MallardDuck extends Duck {
 
     @Override
     public void display() {
-        System.out.print("Я – кряква! ");
+        System.out.print("I'm a real Mallard duck! ");
         getFlyBehavior().displayFlyBehavior();
     }
 }

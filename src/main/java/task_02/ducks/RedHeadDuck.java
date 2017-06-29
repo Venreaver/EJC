@@ -11,7 +11,7 @@ public class RedHeadDuck extends Duck {
 
     @Override
     public void display() {
-        System.out.print("Я – красноголовый нырок! ");
+        System.out.print("I'm a real Red Headed duck! ");
         getFlyBehavior().displayFlyBehavior();
     }
 }

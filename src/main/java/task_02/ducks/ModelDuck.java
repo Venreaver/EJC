@@ -11,7 +11,7 @@ public class ModelDuck extends Duck {
 
     @Override
     public void display() {
-        System.out.print("Я – утка-приманка! ");
+        System.out.print("I'm a model duck! ");
         getFlyBehavior().displayFlyBehavior();
     }
 }

@@ -11,7 +11,7 @@ public class RocketDuck extends Duck {
 
     @Override
     public void display() {
-        System.out.print("Я - утка-ракета! ");
+        System.out.print("I'm a real Rocket duck! ");
         getFlyBehavior().displayFlyBehavior();
     }
 }

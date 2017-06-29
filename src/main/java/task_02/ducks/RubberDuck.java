@@ -11,7 +11,7 @@ public class RubberDuck extends Duck {
 
     @Override
     public void display() {
-        System.out.print("Я – резинова утка! ");
+        System.out.print("I'm a rubber duckie! ");
         getFlyBehavior().displayFlyBehavior();
     }
 }

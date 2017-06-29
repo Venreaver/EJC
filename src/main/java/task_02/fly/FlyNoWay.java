@@ -8,6 +8,6 @@ public class FlyNoWay implements FlyBehavior {
 
     @Override
     public void displayFlyBehavior() {
-        System.out.print("Я не умею летать!");
+        System.out.print("I can't fly!");
     }
 }

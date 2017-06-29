@@ -1,6 +1,6 @@
 package task_02.fly;
 
-import task_02.DuckRace;
+import task_02.racelogic.DuckRace;
 
 public class FlyByJump implements FlyBehavior {
     @Override
@@ -12,6 +12,6 @@ public class FlyByJump implements FlyBehavior {
 
     @Override
     public void displayFlyBehavior() {
-        System.out.print("Лечу в прыжке!");
+        System.out.print("I'm flying by jumps!");
     }
 }

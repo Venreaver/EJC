@@ -1,4 +1,4 @@
-package task_02;
+package task_02.racelogic;
 
 import task_02.ducks.DecoyDuck;
 import task_02.ducks.Duck;

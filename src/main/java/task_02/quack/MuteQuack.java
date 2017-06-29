@@ -3,6 +3,6 @@ package task_02.quack;
 public class MuteQuack implements QuackBehavior {
     @Override
     public void quack() {
-        System.out.println("<< Тишина >>");
+        System.out.println("<< Silence >>");
     }
 }

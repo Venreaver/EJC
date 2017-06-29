@@ -1,4 +1,4 @@
-package task_02;
+package task_02.racelogic;
 
 import task_02.ducks.*;
 import task_02.fly.FlyByJump;
@@ -12,9 +12,9 @@ import java.util.List;
 public class DuckRace {
     public static final int MAX_DUCK_SPEED = 100;
     public static final int MIN_DUCK_SPEED = 10;
-    public static final int RACE_TIME = 10;
-    public static final int DUCKS_COUNT = 5;
-    public static final int BET_SUM = 100;
+    private static final int RACE_TIME = 10;
+    private static final int DUCKS_COUNT = 5;
+    private static final int BET_SUM = 100;
 
     private int playerBank;
     private int raceBank;

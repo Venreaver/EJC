@@ -11,6 +11,7 @@ public class DecoyDuck extends Duck {
 
     @Override
     public void display() {
-        System.out.println("Я – искуственная утка!");
+        System.out.print("I'm a duck Decoy! ");
+        getFlyBehavior().displayFlyBehavior();
     }
 }
