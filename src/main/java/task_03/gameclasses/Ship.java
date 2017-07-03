@@ -1,4 +1,6 @@
-package task_03;
+package task_03.gameclasses;
+
+import task_03.GameConfig;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,16 +23,6 @@ public class Ship {
     public int getShipSize() {
         return shipSize;
     }
-
-    //    public Ship(List<Cell> cellList) {
-//        this.cellList = cellList;
-//        shipShadowList = new ArrayList<>();
-//    }
-//
-//    public Ship(Cell cell) {
-//        this();
-//        cellList.add(cell);
-//    }
 
     public List<Cell> getCellList() {
         return cellList;

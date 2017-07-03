@@ -1,4 +1,8 @@
-package task_03;
+package task_03.logic;
+
+import task_03.GameConfig;
+import task_03.gameclasses.Cell;
+import task_03.gameclasses.Ship;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -28,7 +32,6 @@ public class GameBoard {
                 arrangeShip(new Ship(size));
             }
         }
-        System.out.println();
     }
 
     private void arrangeShip(Ship ship) {
@@ -75,44 +78,37 @@ public class GameBoard {
         availableCellList.removeAll(ship.getCellList());
         setShipShadow(ship);
         shipList.add(ship);
-        System.out.println();
     }
 
     private void setShipShadow(Ship ship) {
-        for (Cell cell: ship.getCellList()) {
+        boolean isExistMinRow = ship.getMinShipRow() > 0;
+        boolean isExistMaxRow = ship.getMaxShipRow() + 1 != cells.length;
+        boolean isExistMinCol = ship.getMinShipCol() > 0;
+        boolean isExistMaxCol = ship.getMaxShipCol() + 1 != cells[0].length;
+        int minShadowRow = isExistMinRow ? ship.getMinShipRow() - 1 : ship.getMinShipRow();
+        int maxShadowRow = isExistMaxRow ? ship.getMaxShipRow() + 1 : ship.getMaxShipRow();
+        int minShadowCol = isExistMinCol ? ship.getMinShipCol() - 1 : ship.getMinShipCol();
+        int maxShadowCol = isExistMaxCol ? ship.getMaxShipCol() + 1 : ship.getMaxShipCol();
+        int verticalStartPos = isExistMinRow ? 1 : 0;
+        int verticalLength = isExistMaxRow ? maxShadowRow - minShadowRow : maxShadowRow - minShadowRow + 1;
+        int horLength = maxShadowCol - minShadowCol + 1;
 
+        for (int i = 0; i < horLength; ++i) {
+            if (isExistMinRow) {
+                ship.getCellShadowList().add(cells[minShadowRow][minShadowCol + i]);
+            }
+            if (isExistMaxRow) {
+                ship.getCellShadowList().add(cells[maxShadowRow][minShadowCol + i]);
+            }
         }
-//        int maxShadowRow = ship.getMaxShipRow() + 1 != cells.length ? ship.getMaxShipRow() + 1 : ship.getMaxShipRow();
-//        int minShadowRow = ship.getMinShipRow() > 0 ? ship.getMinShipRow() - 1 : ship.getMinShipRow();
-//        int maxShadowCol = ship.getMaxShipCol() + 1 != cells[0].length ? ship.getMaxShipCol() + 1 : ship.getMaxShipCol();
-//        int minShadowCol = ship.getMinShipCol() > 0 ? ship.getMinShipCol() - 1 : ship.getMinShipCol();
-//        int horLength = maxShadowCol - minShadowCol + 1;
-//        int verticalLength = maxShadowRow - minShadowRow;
-//
-//        if (minShadowRow < ship.getMinShipRow()) {
-//            for (int i = 0; i < horLength; ++i) {
-//                cells[minShadowRow][minShadowCol + i].setShot(true);
-//                ship.getCellShadowList().add(cells[minShadowRow][minShadowCol + i]);
-//            }
-//        }
-//        if (maxShadowRow > ship.getMaxShipRow()) {
-//            for (int i = 0; i < horLength; ++i) {
-//                cells[maxShadowRow][minShadowCol + i].setShot(true);
-//                ship.getCellShadowList().add(cells[maxShadowRow][minShadowCol + i]);
-//            }
-//        }
-//        if (minShadowCol > ship.getMinShipCol()) {
-//            for (int i = 1; i < verticalLength; ++i) {
-//                cells[minShadowRow + i][minShadowCol].setShot(true);
-//                ship.getCellShadowList().add(cells[minShadowRow + i][minShadowCol]);
-//            }
-//        }
-//        if (maxShadowCol > ship.getMaxShipCol()) {
-//            for (int i = 1; i < verticalLength; ++i) {
-//                cells[minShadowRow + i][maxShadowCol].setShot(true);
-//                ship.getCellShadowList().add(cells[minShadowRow + i][maxShadowCol]);
-//            }
-//        }
+        for (int i = verticalStartPos; i < verticalLength; ++i) {
+            if (isExistMinCol) {
+                ship.getCellShadowList().add(cells[minShadowRow + i][minShadowCol]);
+            }
+            if (isExistMaxCol) {
+                ship.getCellShadowList().add(cells[minShadowRow + i][maxShadowCol]);
+            }
+        }
         availableCellList.removeAll(ship.getCellShadowList());
     }
 
@@ -122,25 +118,12 @@ public class GameBoard {
         for (int i = 0; i < gameBoard.cells.length; ++i) {
             for (int j = 0; j < gameBoard.cells[i].length; ++j) {
                 if (gameBoard.cells[i][j].isPartOfShip()) {
-                    System.out.print(1 + " ");
+                    System.out.print(1 + "  ");
                 } else if (gameBoard.cells[i][j].isShot()) {
-                    System.out.print("X" + " ");
+                    System.out.print("*" + "  ");
                 } else {
-                    System.out.print(0 + " ");
+                    System.out.print("~" + "  ");
                 }
-//                boolean flag = false;
-//                for (Ship ship : gameBoard.shipList) {
-//                    if (ship.getCellList().contains(gameBoard.cells[i][j])) {
-//                        System.out.print(1 + " ");
-//                        flag = true;
-//                    } else if (ship.getCellShadowList().contains(gameBoard.cells[i][j])) {
-//                        flag = true;
-//                        System.out.print("* ");
-//                    }
-//                }
-//                if (!flag) {
-//                    System.out.print(0 + " ");
-//                }
             }
             System.out.println();
         }

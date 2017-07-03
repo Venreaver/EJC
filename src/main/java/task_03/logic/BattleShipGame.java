@@ -1,4 +1,4 @@
-package task_03;
+package task_03.logic;
 
 public class BattleShipGame {
 }

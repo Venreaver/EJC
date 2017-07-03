@@ -1,10 +1,12 @@
-package task_03;
+package task_03.gameclasses;
+
+import task_03.GameConfig;
 
 public class Cell {
     private int row = GameConfig.NOT_EXIST;
     private int col = GameConfig.NOT_EXIST;
-    private boolean isShot;
-    private boolean isPartOfShip;
+    private boolean isShot = false;
+    private boolean isPartOfShip = false;
 
     public Cell() {
     }
