@@ -5,7 +5,7 @@
    Simple app with `Hello World!`
 2. [task_02](https://github.com/Venreaver/EJC/tree/master/src/main/java/task_02) – **done**  
    Duck Race is Casino-style console game with Strategy Pattern inside
-3. [task_03](https://github.com/Venreaver/EJC/tree/master/src/main/java) – **in progress**  
+3. [task_03](https://github.com/Venreaver/ejc_13/tree/master/src/main/java/task_03) – **in progress**  
    Simple BattleShip Game implementation
 
 ## Additional Tasks
