@@ -11,8 +11,8 @@ public class Ship {
     private int shipSize;
 
     public Ship() {
-        cellList = new ArrayList<>(GameConfig.MAX_SHIP_SIZE);
-        cellShadowList = new ArrayList<>(GameConfig.MAX_SHIP_SIZE * 2 + 6);
+        this.cellList = new ArrayList<>(GameConfig.MAX_SHIP_SIZE);
+        this.cellShadowList = new ArrayList<>(GameConfig.MAX_SHIP_SIZE * 2 + 6);
     }
 
     public Ship(int shipSize) {

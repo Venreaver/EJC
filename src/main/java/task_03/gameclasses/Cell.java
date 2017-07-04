@@ -47,4 +47,9 @@ public class Cell {
     public void setPartOfShip(boolean partOfShip) {
         isPartOfShip = partOfShip;
     }
+
+    public void clearCell() {
+        isShot = false;
+        isPartOfShip = false;
+    }
 }

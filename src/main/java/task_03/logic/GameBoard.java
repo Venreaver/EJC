@@ -13,19 +13,24 @@ public class GameBoard {
     private List<Cell> availableCellList;
     private List<Ship> shipList;
 
-    public GameBoard() {
-        cells = new Cell[GameConfig.BOARD_SIZE][GameConfig.BOARD_SIZE];
-        availableCellList = new LinkedList<>();
-        for (int i = 0; i < cells.length; ++i) {
-            for (int j = 0; j < cells[i].length; ++j) {
-                cells[i][j] = new Cell(i, j);
-                availableCellList.add(cells[i][j]);
-            }
-        }
-        shipList = new LinkedList<>();
+    GameBoard() {
+        this.cells = new Cell[GameConfig.BOARD_SIZE][GameConfig.BOARD_SIZE];
+        this.availableCellList = new LinkedList<>();
+        this.shipList = new LinkedList<>();
+        makeRandomBoard();
     }
 
     private void makeRandomBoard() {
+        for (int i = 0; i < cells.length; ++i) {
+            for (int j = 0; j < cells[i].length; ++j) {
+                if (cells[i][j] == null) {
+                    cells[i][j] = new Cell(i, j);
+                } else {
+                    cells[i][j].clearCell();
+                }
+                availableCellList.add(cells[i][j]);
+            }
+        }
         int size = GameConfig.MAX_SHIP_SIZE;
         for (int count = 0; count < GameConfig.SHIPS_TYPES; ++count, --size) {
             for (int i = 0; i <= count; ++i) {
@@ -112,17 +117,63 @@ public class GameBoard {
         availableCellList.removeAll(ship.getCellShadowList());
     }
 
-    public static void main(String[] args) {
-        GameBoard gameBoard = new GameBoard();
-        gameBoard.makeRandomBoard();
-        for (int i = 0; i < gameBoard.cells.length; ++i) {
-            for (int j = 0; j < gameBoard.cells[i].length; ++j) {
-                if (gameBoard.cells[i][j].isPartOfShip()) {
-                    System.out.print(1 + "  ");
-                } else if (gameBoard.cells[i][j].isShot()) {
-                    System.out.print("*" + "  ");
+    public Cell[][] getCells() {
+        return cells;
+    }
+
+    public List<Ship> getShipList() {
+        return shipList;
+    }
+
+    void reArrangeGameBoard() {
+        availableCellList.clear();
+        shipList.clear();
+        makeRandomBoard();
+    }
+
+    boolean markShot(int row, int col) {
+        if (cells[row][col].isShot()) {
+            return false;
+        }
+        cells[row][col].setShot(true);
+        if (cells[row][col].isPartOfShip()) {
+            Ship currentShip = null;
+            for (Ship ship : shipList) {
+                if (ship.getCellList().contains(cells[row][col])) {
+                    currentShip = ship;
+                }
+            }
+            if (currentShip != null && !currentShip.isAlive()) {
+                for (Cell shadowCell : currentShip.getCellShadowList()) {
+                    shadowCell.setShot(true);
+                }
+                shipList.remove(currentShip);
+            }
+        }
+        return true;
+    }
+
+    int getAliveShipsCount() {
+        return shipList.size();
+    }
+
+    void showGameBoard() {
+        for (int i = 0; i < GameConfig.BOARD_SIZE; ++i) {
+            int rowNum = i + 1;
+            if (rowNum != GameConfig.BOARD_SIZE) {
+                System.out.print(rowNum + GameConfig.GAP);
+            } else {
+                System.out.print(rowNum + GameConfig.GAP.substring(0, 1));
+            }
+            for (int j = 0; j < GameConfig.BOARD_SIZE; ++j) {
+                if (cells[i][j].isShot()) {
+                    if (cells[i][j].isPartOfShip()) {
+                        System.out.print(GameConfig.SHIP_SHOT_CELL + GameConfig.GAP);
+                    } else {
+                        System.out.print(GameConfig.MISS_SHOT_CELL + GameConfig.GAP);
+                    }
                 } else {
-                    System.out.print("~" + "  ");
+                    System.out.print(GameConfig.EMPTY_CELL + GameConfig.GAP);
                 }
             }
             System.out.println();
