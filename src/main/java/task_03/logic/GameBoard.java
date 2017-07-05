@@ -13,13 +13,10 @@ public class GameBoard {
     private List<Ship> shipList;
 
     GameBoard() {
-        long startTime = System.nanoTime();
         this.cells = new Cell[GameConfig.BOARD_SIZE][GameConfig.BOARD_SIZE];
         this.availableCellList = new ArrayList<>(GameConfig.BOARD_SIZE * GameConfig.BOARD_SIZE);
         this.shipList = new ArrayList<>();
         makeRandomBoard();
-        long time = System.nanoTime() - startTime;
-        System.out.println(time);
     }
 
     private void makeRandomBoard() {
