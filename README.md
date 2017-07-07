@@ -19,3 +19,5 @@
    Simple app that shows how to make collision in HashMap, loose element in HashMap, how to find it
 
 ### Tasks for self-improving with Zlatopolsky
+1. [chapter_9](https://github.com/Venreaver/ejc13/tree/master/src/main/java/chapter_9) - **done**  
+   Simple app with StringExerciseClass which represents solution of tasks No. 9.43, 9.116
