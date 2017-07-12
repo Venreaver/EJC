@@ -7,7 +7,7 @@ import task_03.gameclasses.Ship;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GameBoard {
+class GameBoard {
     private Cell[][] cells;
     private List<Cell> availableCellList;
     private List<Ship> shipList;
@@ -114,14 +114,6 @@ public class GameBoard {
             }
         }
         availableCellList.removeAll(ship.getCellShadowList());
-    }
-
-    public Cell[][] getCells() {
-        return cells;
-    }
-
-    public List<Ship> getShipList() {
-        return shipList;
     }
 
     void reArrangeGameBoard() {

@@ -3,7 +3,7 @@ package task_02.fly;
 /**
  * Abstraction of flying behavior
  *
- * @author Vasileva Irina
+ * @author Irina Vasileva
  */
 public interface FlyBehavior {
     /**

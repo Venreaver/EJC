@@ -5,8 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * The StringExerciseClass program implements an application that
- * displays solution for tasks 9.43 and 9.116 from Zlatopolsky book
+ * Program displays solution for tasks 9.43 and 9.116 from Zlatopolsky book.
  *
  * @author  Irina Vasileva
  */
@@ -39,8 +38,8 @@ public class StringExerciseClass {
     }
 
     /**
-     * This is the getEvenCharsOfString method which returns
-     * String with only even characters from input String
+     * Get string with only even characters from input String.
+     *
      * @param inputString represents input string
      * @return String with even characters
      */
@@ -53,8 +52,8 @@ public class StringExerciseClass {
     }
 
     /**
-     * This is the isPalindrome method which returns
-     * boolean whether the string is a palindrome
+     * Find out whether the string is a palindrome.
+     *
      * @param inputString represents input string
      * @return boolean whether the string is a palindrome
      */

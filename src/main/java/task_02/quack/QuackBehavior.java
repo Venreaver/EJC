@@ -3,7 +3,7 @@ package task_02.quack;
 /**
  * Abstraction of sound behavior
  *
- * @author Vasileva Irina
+ * @author Irina Vasileva
  */
 public interface QuackBehavior {
     /**
