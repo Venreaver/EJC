@@ -1,5 +1,6 @@
 package tasks.task_02.ducks;
 
+import tasks.task_02.DuckConfig;
 import tasks.task_02.fly.FlyRocketPowered;
 import tasks.task_02.quack.FakeQuack;
 
@@ -11,7 +12,7 @@ public class RocketDuck extends Duck {
 
     @Override
     public void display() {
-        System.out.print("I'm a real Rocket duck! ");
+        System.out.print(DuckConfig.ROCKET_DUCK);
         getFlyBehavior().displayFlyBehavior();
     }
 }

@@ -1,5 +1,6 @@
 package tasks.task_02.ducks;
 
+import tasks.task_02.DuckConfig;
 import tasks.task_02.fly.FlyNoWay;
 import tasks.task_02.quack.Quack;
 
@@ -11,7 +12,7 @@ public class ModelDuck extends Duck {
 
     @Override
     public void display() {
-        System.out.print("I'm a model duck! ");
+        System.out.print(DuckConfig.MODEL_DUCK);
         getFlyBehavior().displayFlyBehavior();
     }
 }

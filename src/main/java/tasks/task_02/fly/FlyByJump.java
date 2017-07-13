@@ -1,5 +1,6 @@
 package tasks.task_02.fly;
 
+import tasks.task_02.DuckConfig;
 import tasks.task_02.RaceConfig;
 
 public class FlyByJump implements FlyBehavior {
@@ -12,6 +13,6 @@ public class FlyByJump implements FlyBehavior {
 
     @Override
     public void displayFlyBehavior() {
-        System.out.print("I'm flying by jumps!");
+        System.out.print(DuckConfig.JUMPS_FLY);
     }
 }

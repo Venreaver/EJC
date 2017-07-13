@@ -1,5 +1,6 @@
 package tasks.task_02.ducks;
 
+import tasks.task_02.DuckConfig;
 import tasks.task_02.fly.FlyBehavior;
 import tasks.task_02.quack.QuackBehavior;
 
@@ -10,7 +11,7 @@ public abstract class Duck {
     public abstract void display();
 
     public void swim() {
-        System.out.println("All ducks float, even decoys!");
+        System.out.println(DuckConfig.SWIM);
     }
 
     public int performFly() {

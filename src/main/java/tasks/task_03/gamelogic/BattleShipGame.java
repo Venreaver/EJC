@@ -37,12 +37,18 @@ public class BattleShipGame {
                         if (playerChoice.matches("[a-jA-J]([1-9]|10)")) {
                             int col = GameConfig.LETTERS.indexOf(playerChoice.charAt(0));
                             int row = Integer.parseInt(playerChoice.substring(1, playerChoice.length())) - 1;
-                            if (gameBoard.markShot(row, col)) {
+                            int hit = gameBoard.markShot(row, col);
+                            if (hit > -1) {
                                 --shotAttempts;
                                 if (gameBoard.getAliveShipsCount() == 0) {
                                     break nextPlayerChoice;
                                 }
                                 showMenu();
+                                if (hit > 0) {
+                                    System.out.println(GameConfig.HIT);
+                                } else {
+                                    System.out.println(GameConfig.MISS);
+                                }
                                 break;
                             }
                         }

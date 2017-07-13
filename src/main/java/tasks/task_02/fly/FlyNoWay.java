@@ -1,5 +1,7 @@
 package tasks.task_02.fly;
 
+import tasks.task_02.DuckConfig;
+
 public class FlyNoWay implements FlyBehavior {
     @Override
     public int fly() {
@@ -8,6 +10,6 @@ public class FlyNoWay implements FlyBehavior {
 
     @Override
     public void displayFlyBehavior() {
-        System.out.print("I can't fly!");
+        System.out.print(DuckConfig.FLY_NO_WAY);
     }
 }

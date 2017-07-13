@@ -122,9 +122,9 @@ class GameBoard {
         makeRandomBoard();
     }
 
-    boolean markShot(int row, int col) {
+    int markShot(int row, int col) {
         if (cells[row][col].isShot()) {
-            return false;
+            return -1;
         }
         cells[row][col].setShot(true);
         if (cells[row][col].isPartOfShip()) {
@@ -140,8 +140,9 @@ class GameBoard {
                 }
                 shipList.remove(currentShip);
             }
+            return 1;
         }
-        return true;
+        return 0;
     }
 
     int getAliveShipsCount() {
