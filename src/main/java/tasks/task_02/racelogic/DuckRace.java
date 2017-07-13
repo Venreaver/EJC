@@ -70,9 +70,10 @@ public class DuckRace {
     private void makeChoice() {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             while ((playerBank > 0) && (raceBank > 0)) {
-                try {
-                    int choice = Integer.parseInt(reader.readLine().trim());
-                    switch (choice) {
+                String choice = reader.readLine().trim();
+                if (choice.matches("\\d")) {
+                    int numChoice = Integer.parseInt(choice);
+                    switch (numChoice) {
                         case 1:
                         case 2:
                         case 3:
@@ -81,7 +82,7 @@ public class DuckRace {
                             createDucks();
                             playerBank -= BET_SUM;
                             raceBank += BET_SUM;
-                            System.out.println("You chose duck № " + choice);
+                            System.out.println("You chose duck № " + numChoice);
                             startRace();
                             int maxDistance = findWinners();
                             System.out.println("The maximum flight distance in this race is " + maxDistance);
@@ -92,7 +93,7 @@ public class DuckRace {
                                 if (raceGroupList.get(i).isWinner()) {
                                     System.out.print("Duck № " + (i + 1) + " - ");
                                     raceGroupList.get(i).getDuck().display();
-                                    if (choice == i + 1) {
+                                    if (numChoice == i + 1) {
                                         System.out.print(" - PLAYER'S CHOICE");
                                         raceBank -= BET_SUM * 2;
                                         playerBank += BET_SUM * 2;
@@ -114,7 +115,7 @@ public class DuckRace {
                         default:
                             System.out.println("Invalid input. Try again. Enter 9 for information");
                     }
-                } catch (NumberFormatException ex) {
+                } else {
                     System.out.println("Invalid input. Try again. Enter 9 for information");
                 }
             }
@@ -124,7 +125,7 @@ public class DuckRace {
                 System.out.println("You are total winner! We have no more money to play with you! Goodbye!");
             }
         } catch (IOException ex) {
-            System.out.println("Error: " + ex.getMessage());
+            System.err.println("Error: " + ex.getMessage());
         }
     }
 
@@ -136,7 +137,7 @@ public class DuckRace {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
-                System.out.println("Error: " + ex.getMessage());
+                System.err.println("Error: " + ex.getMessage());
             }
         }
         System.out.println("GO!");
@@ -148,7 +149,7 @@ public class DuckRace {
             try {
                 Thread.sleep(950);
             } catch (InterruptedException ex) {
-                System.out.println("Error: " + ex.getMessage());
+                System.err.println("Error: " + ex.getMessage());
             }
         }
         System.out.println("\nFINISH!");

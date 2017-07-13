@@ -29,4 +29,6 @@ public class GameConfig {
     public static final String DESTROYED_SHIPS = "Destroyed ships: ";
     public static final String END_CONSOLE = "==================================================";
     public static final String INVALID_INPUT = "Invalid input. Try again.";
+    public static final String BYE = "Good Bye!";
+    public static final String ERROR = "Error: ";
 }

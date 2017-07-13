@@ -31,26 +31,19 @@ public class BattleShipGame {
                         showMenu();
                         break;
                     case "0":
-                        System.out.println("Good Bye!");
+                        System.out.println(GameConfig.BYE);
                         return;
                     default:
-                        if (playerChoice.length() > 0 && playerChoice.length() < 4) {
+                        if (playerChoice.matches("[a-jA-J]([1-9]|10)")) {
                             int col = GameConfig.LETTERS.indexOf(playerChoice.charAt(0));
-                            try {
-                                int row = Integer.parseInt(playerChoice.substring(1, playerChoice.length())) - 1;
-                                if (col >= 0 && col < GameConfig.BOARD_SIZE && row >= 0 && row < GameConfig.BOARD_SIZE) {
-                                    if (gameBoard.markShot(row, col)) {
-                                        --shotAttempts;
-                                        if (gameBoard.getAliveShipsCount() == 0) {
-                                            break nextPlayerChoice;
-                                        }
-                                        showMenu();
-                                        break;
-                                    }
+                            int row = Integer.parseInt(playerChoice.substring(1, playerChoice.length())) - 1;
+                            if (gameBoard.markShot(row, col)) {
+                                --shotAttempts;
+                                if (gameBoard.getAliveShipsCount() == 0) {
+                                    break nextPlayerChoice;
                                 }
-                            } catch (NumberFormatException ignored) {
-                                // ignored because no need to duplicate code
-                                // INVALID_INPUT will be shown in console on next step
+                                showMenu();
+                                break;
                             }
                         }
                         System.out.println(GameConfig.INVALID_INPUT);
@@ -63,7 +56,7 @@ public class BattleShipGame {
                 System.out.println(GameConfig.LOSS);
             }
         } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.err.println(GameConfig.ERROR + e.getMessage());
         }
     }
 

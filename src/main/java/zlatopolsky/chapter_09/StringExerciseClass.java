@@ -1,5 +1,7 @@
 package zlatopolsky.chapter_09;
 
+import tasks.task_03.GameConfig;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,7 +9,7 @@ import java.io.InputStreamReader;
 /**
  * Program displays solution for tasks 9.43 and 9.116 from Zlatopolsky book.
  *
- * @author  Irina Vasileva
+ * @author Irina Vasileva
  */
 public class StringExerciseClass {
     public static void main(String[] args) {
@@ -21,7 +23,7 @@ public class StringExerciseClass {
             String str = reader.readLine();
             System.out.println(getEvenCharsOfString(str));
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+            System.err.println(GameConfig.ERROR + ex.getMessage());
         }
         // 9.116 task solution
         // Проверить, является ли "перевертышем" следующая
