@@ -27,7 +27,7 @@ public class GameConfig {
     public static final String SHOTS = "Shots that you have: ";
     public static final String ALIVE_SHIPS = "Alive ships: ";
     public static final String DESTROYED_SHIPS = "Destroyed ships: ";
-    public static final String END_CONSOLE = "==================================================";
+    public static final String CONSOLE_LINE = "==================================================";
     public static final String INVALID_INPUT = "Invalid input. Try again.";
     public static final String BYE = "Good Bye!";
     public static final String ERROR = "Error: ";

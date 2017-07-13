@@ -1,5 +1,6 @@
 package tasks.task_02.racelogic;
 
+import tasks.task_02.RaceConfig;
 import tasks.task_02.ducks.*;
 import tasks.task_02.fly.FlyByJump;
 
@@ -10,12 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DuckRace {
-    public static final int MAX_DUCK_SPEED = 100;
-    public static final int MIN_DUCK_SPEED = 10;
-    private static final int RACE_TIME = 10;
-    private static final int DUCKS_COUNT = 5;
-    private static final int BET_SUM = 100;
-
     private int playerBank;
     private int raceBank;
     private List<DuckRacer> raceGroupList;
@@ -24,7 +19,7 @@ public class DuckRace {
         playerBank = 500;
         raceBank = 2000;
         raceGroupList = new ArrayList<>();
-        for (int i = 0; i < DUCKS_COUNT; ++i) {
+        for (int i = 0; i < RaceConfig.DUCKS_COUNT; ++i) {
             raceGroupList.add(new DuckRacer());
         }
     }
@@ -35,17 +30,17 @@ public class DuckRace {
     }
 
     private void info() {
-        System.out.println("********DUCK RACE INFORMATION********");
-        System.out.println("Your current balance is " + playerBank);
-        System.out.println("Choose something to start:");
-        System.out.println("    * Enter number from 1 to 5 to choose duck in the race");
-        System.out.println("    * Enter 9 to get information");
-        System.out.println("    * Enter 0 to exit");
+        System.out.println(RaceConfig.INFO_LINE);
+        System.out.println(RaceConfig.CURRENT_BALANCE + playerBank);
+        System.out.println(RaceConfig.CHOOSE_LINE);
+        System.out.println(RaceConfig.DUCK_NUM_CHOICE);
+        System.out.println(RaceConfig.INFO_CHOICE);
+        System.out.println(RaceConfig.EXIT_CHOICE);
     }
 
     private void createDucks() {
         for (DuckRacer duckRacer : raceGroupList) {
-            int number = (int) (Math.random() * DUCKS_COUNT);
+            int number = (int) (Math.random() * RaceConfig.DUCKS_COUNT);
             switch (number) {
                 case 0:
                     duckRacer.setDuck(new MallardDuck());
@@ -80,68 +75,69 @@ public class DuckRace {
                         case 4:
                         case 5:
                             createDucks();
-                            playerBank -= BET_SUM;
-                            raceBank += BET_SUM;
-                            System.out.println("You chose duck № " + numChoice);
+                            playerBank -= RaceConfig.BET_SUM;
+                            raceBank += RaceConfig.BET_SUM;
+                            System.out.println(RaceConfig.PLAYER_CHOICE + numChoice);
                             startRace();
                             int maxDistance = findWinners();
-                            System.out.println("The maximum flight distance in this race is " + maxDistance);
-                            System.out.println("================================================");
-                            System.out.println("Winners are: ");
-                            String winOrLose = "You lost this race! Better luck next time";
-                            for (int i = 0; i < DUCKS_COUNT; ++i) {
+                            System.out.println(RaceConfig.MAX_RACE_DISTANCE + maxDistance);
+                            System.out.println(RaceConfig.CONSOLE_LINE);
+                            System.out.println(RaceConfig.WINNERS);
+                            String winOrLose = RaceConfig.LOST_RACE;
+                            for (int i = 0; i < RaceConfig.DUCKS_COUNT; ++i) {
                                 if (raceGroupList.get(i).isWinner()) {
-                                    System.out.print("Duck № " + (i + 1) + " - ");
+                                    System.out.print(RaceConfig.DUCK_NUM + (i + 1) + " - ");
                                     raceGroupList.get(i).getDuck().display();
                                     if (numChoice == i + 1) {
-                                        System.out.print(" - PLAYER'S CHOICE");
-                                        raceBank -= BET_SUM * 2;
-                                        playerBank += BET_SUM * 2;
-                                        winOrLose = "You won this race! Congrats!";
+                                        System.out.print(RaceConfig.PLAYER_DUCK);
+                                        raceBank -= RaceConfig.BET_SUM * 2;
+                                        playerBank += RaceConfig.BET_SUM * 2;
+                                        winOrLose = RaceConfig.RACE_WINNING;
                                     }
                                     System.out.println();
                                 }
                             }
                             System.out.println(winOrLose);
-                            System.out.println("================================================");
+                            System.out.println(RaceConfig.CONSOLE_LINE);
                             info();
                             break;
                         case 9:
                             info();
                             break;
                         case 0:
-                            System.out.println("GOOD BYE!");
+                            System.out.println(RaceConfig.BYE);
                             return;
                         default:
-                            System.out.println("Invalid input. Try again. Enter 9 for information");
+                            System.out.println(RaceConfig.INVALID_INPUT);
+                            break;
                     }
                 } else {
-                    System.out.println("Invalid input. Try again. Enter 9 for information");
+                    System.out.println(RaceConfig.INVALID_INPUT);
                 }
             }
             if (playerBank == 0) {
-                System.out.println("GAME OVER: you lost all your moneys");
+                System.out.println(RaceConfig.GAME_OVER);
             } else {
-                System.out.println("You are total winner! We have no more money to play with you! Goodbye!");
+                System.out.println(RaceConfig.GAME_WINNING);
             }
         } catch (IOException ex) {
-            System.err.println("Error: " + ex.getMessage());
+            System.err.println(RaceConfig.ERROR + ex.getMessage());
         }
     }
 
     private void startRace() {
-        System.out.println("================================================");
-        System.out.println("Race group is ready!");
+        System.out.println(RaceConfig.CONSOLE_LINE);
+        System.out.println(RaceConfig.RACE_READY);
         for (int i = 3; i > 0; --i) {
-            System.out.println("Time to start: " + i);
+            System.out.println(RaceConfig.TIME_TO_START + i);
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
-                System.err.println("Error: " + ex.getMessage());
+                System.err.println(RaceConfig.ERROR + ex.getMessage());
             }
         }
-        System.out.println("GO!");
-        for (int i = 0; i < RACE_TIME; ++i) {
+        System.out.println(RaceConfig.RACE_START);
+        for (int i = 0; i < RaceConfig.RACE_TIME; ++i) {
             System.out.print(i + 1 + " ");
             for (DuckRacer duckRacer : raceGroupList) {
                 duckRacer.setDistance(duckRacer.getDistance() + duckRacer.getDuck().performFly());
@@ -149,11 +145,11 @@ public class DuckRace {
             try {
                 Thread.sleep(950);
             } catch (InterruptedException ex) {
-                System.err.println("Error: " + ex.getMessage());
+                System.err.println(RaceConfig.ERROR + ex.getMessage());
             }
         }
-        System.out.println("\nFINISH!");
-        System.out.println("================================================");
+        System.out.println(RaceConfig.RACE_FINISH);
+        System.out.println(RaceConfig.CONSOLE_LINE);
     }
 
     private int findWinners() {

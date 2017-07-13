@@ -77,6 +77,6 @@ public class BattleShipGame {
         System.out.print(GameConfig.ALIVE_SHIPS + gameBoard.getAliveShipsCount() + GameConfig.GAP);
         System.out.print(GameConfig.DESTROYED_SHIPS + (GameConfig.SHIPS_COUNT - gameBoard.getAliveShipsCount()) + GameConfig.GAP);
         System.out.println(GameConfig.SHOTS + shotAttempts);
-        System.out.println(GameConfig.END_CONSOLE);
+        System.out.println(GameConfig.CONSOLE_LINE);
     }
 }
