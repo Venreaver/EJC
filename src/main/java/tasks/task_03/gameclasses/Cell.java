@@ -2,6 +2,9 @@ package tasks.task_03.gameclasses;
 
 import tasks.task_03.GameConfig;
 
+/**
+ * Cell class represent cell on game board
+ */
 public class Cell {
     private int row = GameConfig.NOT_EXIST;
     private int col = GameConfig.NOT_EXIST;
@@ -48,6 +51,9 @@ public class Cell {
         isPartOfShip = partOfShip;
     }
 
+    /**
+     * reset cell state by setting cell is not part of ship and is not shot
+     */
     public void clearCell() {
         isShot = false;
         isPartOfShip = false;

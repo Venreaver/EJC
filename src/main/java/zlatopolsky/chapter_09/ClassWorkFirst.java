@@ -23,10 +23,10 @@ public class ClassWorkFirst {
 
     /**
      * Get input string from console and print in console odd characters from user's input string
-     * <p>Task № 9.43: Дано слово s1. Получить слово s2, образованное нечетными буквами слова s1.</p>
+     * <p>Task № 9.43: Дано слово s1. Получить слово s2, образованное нечетными буквами слова s1.
      * <p>Замечание: метод getEvenCharsOfString возвращает строку
      * с четными с точки зрения программирования символами, т.к. первый индекс символа в строке четный - 0,
-     * но в представлении пользователя возвращается строка из нечетных символов</p>
+     * но в представлении пользователя возвращается строка из нечетных символов
      */
     private void printOddChars() {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
@@ -39,10 +39,10 @@ public class ClassWorkFirst {
     /**
      * Print in console input string with info whether input string is a palindrome
      * <p>Task № 9.116: Проверить, является ли "перевертышем" следующая
-     * символьная строка после удаления из нее всех пробелов:</p>
-     * <p>а) АРГЕНТИНА МАНИТ НЕГРА;</p>
-     * <p>б) ПОТ КАК ПОТОП;</p>
-     * <p>в) А РОЗА УПАЛА НА ЛАПУ АЗОРА;</p>
+     * символьная строка после удаления из нее всех пробелов:
+     * <p>а) АРГЕНТИНА МАНИТ НЕГРА;
+     * <p>б) ПОТ КАК ПОТОП;
+     * <p>в) А РОЗА УПАЛА НА ЛАПУ АЗОРА;
      */
     private void printPalindromeInfo() {
         String testPalindromeString = "АРГЕНТИНА МАНИТ НЕГРА";
@@ -74,7 +74,7 @@ public class ClassWorkFirst {
      * Find out whether the string is a palindrome.
      *
      * @param inputString represents input string
-     * @return true if input string is palindrome otherwise false
+     * @return <code>true</code> if input string is palindrome otherwise <code>false</code>
      */
     private boolean isPalindrome(String inputString) {
         inputString = inputString.replaceAll(" ", "");

@@ -7,7 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Program displays solution for tasks 9.43 and 9.116 from Zlatopolsky book.
+ * Program displays solution for tasks 9.153 and 9.154 from Zlatopolsky book.
  *
  * @author Irina Vasileva
  */
@@ -19,9 +19,9 @@ public class ClassWorkSecond {
 
     /**
      * Solution for tasks № 9.153, 9.154
-     * <p>Successively Get input strings from console and print result in console for each task</p>
-     * <p>Task № 9.153: Дан текст. Найти наибольшее количество идущих подряд одинаковых символов.</p>
-     * <p>Task № 9.154: Дано слово. Определить, сколько различных букв в нем (латинский алфавит).</p>
+     * <p>Successively Get input strings from console and print result in console for each task
+     * <p>Task № 9.153: Дан текст. Найти наибольшее количество идущих подряд одинаковых символов.
+     * <p>Task № 9.154: Дано слово. Определить, сколько различных букв в нем (латинский алфавит).
      */
     private void printSolution() {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {

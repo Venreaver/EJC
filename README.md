@@ -9,9 +9,9 @@
     Simple BattleShip Game implementation
    
 ### Tasks from Zlatopolsky book
-1. [chapter_9](https://github.com/Venreaver/ejc13/tree/master/src/main/java/zlatopolsky/chapter_09/ClassWorkFirst.java) - **done**  
+1. [ClassWorkFirst](https://github.com/Venreaver/ejc13/tree/master/src/main/java/zlatopolsky/chapter_09/ClassWorkFirst.java) - **done**  
     Simple app which represents solution of tasks No. 9.43, 9.116
-2. [chapter_9](https://github.com/Venreaver/ejc13/tree/master/src/main/java/zlatopolsky/chapter_09/ClassWorkSecond.java) - **done**  
+2. [ClassWorkSecond](https://github.com/Venreaver/ejc13/tree/master/src/main/java/zlatopolsky/chapter_09/ClassWorkSecond.java) - **done**  
     Simple app which represents solution of tasks No. 9.153, 9.154 
 
 ### Additional Tasks

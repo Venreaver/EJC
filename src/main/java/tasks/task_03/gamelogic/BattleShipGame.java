@@ -12,10 +12,14 @@ public class BattleShipGame {
 
     public BattleShipGame() {
         gameBoard = new GameBoard();
-        startGame();
     }
 
-    private void startGame() {
+    /**
+     * Start game
+     * <p>
+     * <p>User can choose between: exit game, reset game, enter shot coordinates
+     */
+    public void startGame() {
         System.out.println(GameConfig.GREETING);
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             System.out.println(GameConfig.START_GAME);
@@ -66,6 +70,9 @@ public class BattleShipGame {
         }
     }
 
+    /**
+     * show game information and menu
+     */
     private void showMenu() {
         System.out.println(GameConfig.GAME);
         System.out.println(GameConfig.RESET_GAME);
