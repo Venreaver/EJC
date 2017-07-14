@@ -6,6 +6,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * BattleShipGame represents simple console BattleShip game implementation
+ * <p> In this version of game user have 60 shot attempts to kill all randomly arranged ships on game board
+ *
+ * @author Irina Vasileva
+ */
 public class BattleShipGame {
     private GameBoard gameBoard;
     private int shotAttempts = GameConfig.SHOT_ATTEMPTS;
@@ -71,7 +77,7 @@ public class BattleShipGame {
     }
 
     /**
-     * show game information and menu
+     * Show game information and menu
      */
     private void showMenu() {
         System.out.println(GameConfig.GAME);

@@ -9,6 +9,8 @@ import java.util.List;
 
 /**
  * GameBoard represents game board with cells for BattleShip game
+ *
+ * @author Irina Vasileva
  */
 class GameBoard {
     private Cell[][] gameBoardCells;
@@ -51,7 +53,7 @@ class GameBoard {
     /**
      * Put ship on game board
      * <p>create positionList with all possible ship positions, both vertical and horizontal,
-     * choose randomly position from positionList, set cells from this position as part of current ship,
+     * choose randomly position from positionList, set cells from this position as parts of current ship,
      * remove all ship cells from availableCellList, set shadow of the ship, add ship in shipList
      *
      * @param ship represents ship to arrange on game board
