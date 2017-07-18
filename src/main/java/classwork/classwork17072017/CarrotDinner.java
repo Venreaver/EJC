@@ -5,7 +5,7 @@ import java.io.IOException;
 /**
  * <p>Class implements rabbit's carrot dinner.
  * <p>Rabbit can eat carrot until any key is entered in console.
- * <p>Class shows how volatile variables can be used.
+ * <p>Class shows how volatile keyword variables can be used.
  */
 public class CarrotDinner {
     volatile static boolean isEating = true;

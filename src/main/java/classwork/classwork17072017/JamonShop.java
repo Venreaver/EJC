@@ -3,7 +3,7 @@ package classwork.classwork17072017;
 /**
  * <p>Class implements jamon shop with only one client.
  * <p>The client can buy several portions of the jamon
- * <p>Class shows how synchronized can be used.
+ * <p>Class shows how synchronized keyword can be used.
  */
 public class JamonShop {
     private static int clientCash = 500;

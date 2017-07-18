@@ -13,6 +13,10 @@
     Simple app which represents solution of tasks No. 9.43, 9.116
 2. [ClassWorkSecond](https://github.com/Venreaver/ejc13/tree/master/src/main/java/zlatopolsky/chapter_09/ClassWorkSecond.java) - **done**  
     Simple app which represents solution of tasks No. 9.153, 9.154 
+    
+### Class Work
+1. [classwork17072017](https://github.com/Venreaver/ejc13/tree/master/src/main/java/classwork/classwork17072017) - **done**  
+    Simple classes which represents how volatile and synchronized keywords can be used
 
 ### Additional Tasks
 1. [add_01](https://github.com/Venreaver/ejc13/tree/master/src/main/java/additional/add_01) - **done**  
