@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class Sorts {
     public static void main(String[] args) {
-        List<Integer> integerList = new ArrayList<>();
+        List<Integer> integerList = new ArrayList<>(25);
         setNumberList(integerList);
         quickSort(integerList);
         printIntegerList(integerList);
@@ -121,18 +121,15 @@ public class Sorts {
             while (integerList.get(highIndex) > pivot) {
                 --highIndex;
             }
-            if (highIndex > lowIndex) {
-                int lowIndexValue = integerList.get(lowIndex);
-                int highIndexValue = integerList.get(highIndex);
-                if (!(lowIndexValue == highIndexValue)) {
-                    int tempInteger = integerList.get(lowIndex);
-                    integerList.set(lowIndex, integerList.get(highIndex));
-                    integerList.set(highIndex, tempInteger);
-                } else {
-                    --highIndex;
-                }
-            } else {
+            if (highIndex <= lowIndex) {
                 return highIndex;
+            }
+            if (integerList.get(lowIndex).intValue() == integerList.get(highIndex).intValue()) {
+                --highIndex;
+            } else {
+                int tempInteger = integerList.get(lowIndex);
+                integerList.set(lowIndex, integerList.get(highIndex));
+                integerList.set(highIndex, tempInteger);
             }
         }
     }
@@ -146,5 +143,6 @@ public class Sorts {
         for (Integer element : integerList) {
             System.out.println(element);
         }
+        System.out.println();
     }
 }
