@@ -34,7 +34,7 @@ public class Sorts {
             while (n > 0) {
                 System.out.println("Please enter a number");
                 String inputString = reader.readLine();
-                if (inputString.matches("[-]*\\d+")) {
+                if (inputString.matches("[-]?\\d+")) {
                     integerList.add(Integer.parseInt(inputString));
                     --n;
                 }
