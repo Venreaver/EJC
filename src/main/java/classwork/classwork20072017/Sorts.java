@@ -16,11 +16,11 @@ public class Sorts {
         List<Integer> integerList = new ArrayList<>(25);
         setNumberList(integerList);
         quickSort(integerList);
-        printIntegerList(integerList);
+        System.out.println(integerList);
         List<Integer> randomList = new ArrayList<>(100);
         setRandomNumberList(randomList);
         insertionSort(randomList);
-        printIntegerList(randomList);
+        System.out.println(randomList);
     }
 
     /**
@@ -51,7 +51,7 @@ public class Sorts {
      */
     private static void setRandomNumberList(List<Integer> integerList) {
         for (int i = 0; i < 100; ++i) {
-            integerList.add((int) (Math.random() * 1000));
+            integerList.add(Math.random() < 0.5 ? (int) (Math.random() * 1000) : -(int) (Math.random() * 1000));
         }
     }
 
@@ -103,14 +103,14 @@ public class Sorts {
     }
 
     /**
-     * Sort elements and find index of pivot element (implementation of Hoare partitioning)
+     * Sort elements and find index of pivot element (implementation of Hoare partition scheme)
      *
      * @param integerList input list in which will be found index of pivot
      * @param lowIndex    first index which represents start index in part
      *                    of the list in which will be found  index of pivot element
      * @param highIndex   last index which represents end index in part
      *                    of the list in which will be found index of pivot element
-     * @return index of pivot element
+     * @return            index of pivot element
      */
     private static int partition(List<Integer> integerList, int lowIndex, int highIndex) {
         int pivot = integerList.get(lowIndex);
@@ -124,25 +124,11 @@ public class Sorts {
             if (highIndex <= lowIndex) {
                 return highIndex;
             }
-            if (integerList.get(lowIndex).intValue() == integerList.get(highIndex).intValue()) {
-                --highIndex;
-            } else {
-                int tempInteger = integerList.get(lowIndex);
-                integerList.set(lowIndex, integerList.get(highIndex));
-                integerList.set(highIndex, tempInteger);
-            }
+            int tempInteger = integerList.get(lowIndex);
+            integerList.set(lowIndex, integerList.get(highIndex));
+            integerList.set(highIndex, tempInteger);
+            ++lowIndex;
+            --highIndex;
         }
-    }
-
-    /**
-     * Print elements of the input list in console
-     *
-     * @param integerList list which will be printed in console
-     */
-    private static void printIntegerList(List<Integer> integerList) {
-        for (Integer element : integerList) {
-            System.out.println(element);
-        }
-        System.out.println();
     }
 }
