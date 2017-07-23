@@ -14,7 +14,7 @@ import java.util.List;
 public class Sorts {
     public static void main(String[] args) {
         List<Integer> integerList = new ArrayList<>(25);
-        setNumberList(integerList);
+        setRandomNumberList(integerList);
         quickSort(integerList);
         System.out.println(integerList);
         List<Integer> randomList = new ArrayList<>(100);
@@ -110,10 +110,10 @@ public class Sorts {
      *                    of the list in which will be found  index of pivot element
      * @param highIndex   last index which represents end index in part
      *                    of the list in which will be found index of pivot element
-     * @return            index of pivot element
+     * @return index of pivot element
      */
     private static int partition(List<Integer> integerList, int lowIndex, int highIndex) {
-        int pivot = integerList.get(lowIndex);
+        int pivot = integerList.get(lowIndex + (highIndex - lowIndex) / 2);
         while (true) {
             while (integerList.get(lowIndex) < pivot) {
                 ++lowIndex;
