@@ -149,6 +149,12 @@ public class SortsAndSearch {
         return -1;
     }
 
+    /**
+     *  Print in console result of binary search
+     *
+     * @param key       value which was searched in array
+     * @param result    result of searching
+     */
     private static void printBinarySearchResult(int key, int result) {
         System.out.println(result == -1 ? "Array doesn't contain value " + key
                 : "Array contains value " + key + " index is " + result);
