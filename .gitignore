@@ -5,3 +5,7 @@ out
 target
 gen
 /src/main/java/training/
+/src/main/resources/prop_en.properties
+/src/main/resources/prop_ru_RU.properties
+/src/main/resources/prop.properties
+/src/main/resources/prop_en_US.properties

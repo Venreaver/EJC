@@ -14,7 +14,7 @@ import java.util.List;
 public class Sorts {
     public static void main(String[] args) {
         List<Integer> integerList = new ArrayList<>(25);
-        setRandomNumberList(integerList);
+        setNumberList(integerList);
         quickSort(integerList);
         System.out.println(integerList);
         List<Integer> randomList = new ArrayList<>(100);
@@ -86,8 +86,8 @@ public class Sorts {
      * <p>
      * <p> 1. Determine pivot index in list
      * <p> if low index < high index:
-     * <p> 2. Recursive call of this method for left part of list (from low Index to pivot index inclusive)
-     * <p> 3. Recursive call of this method for right part of list
+     * <p> 2. Recursively call of this method for left part of list (from low Index to pivot index inclusive)
+     * <p> 3. Recursively call of this method for right part of list
      * (from next index after pivot index to high index inclusive)
      *
      * @param integerList input list which will be sorted
@@ -113,7 +113,7 @@ public class Sorts {
      * @return index of pivot element
      */
     private static int partition(List<Integer> integerList, int lowIndex, int highIndex) {
-        int pivot = integerList.get(lowIndex + (highIndex - lowIndex) / 2);
+        int pivot = integerList.get((highIndex + lowIndex) >>> 1);
         while (true) {
             while (integerList.get(lowIndex) < pivot) {
                 ++lowIndex;

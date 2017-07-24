@@ -18,8 +18,11 @@
 1. [classwork17072017](https://github.com/Venreaver/ejc13/tree/master/src/main/java/classwork/classwork17072017) - **done**  
     Simple classes which represent how volatile and synchronized keywords can be used
 2. [classwork20072017](https://github.com/Venreaver/ejc13/tree/master/src/main/java/classwork/classwork20072017) - **done**  
+   [TEST for classwork20072017](https://github.com/Venreaver/ejc13/tree/master/src/test/java/classwork/classwork20072017) - **all 2 tests passed**  
     Simple class which represents implementation of two sort algorithms: insertion sort, quicksort with Hoare partitioning  
-   [TEST for classwork20072017](https://github.com/Venreaver/ejc13/tree/master/src/test/java/classwork/classwork20072017) - **all 2 tests passed**
+3. [classwork24072017](https://github.com/Venreaver/ejc13/tree/master/src/main/java/classwork/classwork24072017) - **done**  
+   [TEST for classwork24072017](https://github.com/Venreaver/ejc13/tree/master/src/test/java/classwork/classwork24072017) - **all 4 tests passed**  
+    Simple class which represents implementation of three algorithms: bubble sort, merge sort, binary search  
 
 ### Additional Tasks
 1. [add_01](https://github.com/Venreaver/ejc13/tree/master/src/main/java/additional/add_01) - **done**  
