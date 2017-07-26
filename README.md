@@ -7,6 +7,9 @@
     Duck Race is Casino-style console game with Strategy Pattern inside
 3. [task_03](https://github.com/Venreaver/ejc13/tree/master/src/main/java/tasks/task_03) – **done**  
     Simple BattleShip Game implementation
+4. [task_03](https://github.com/Venreaver/ejc13/tree/master/src/main/java/tasks/task_04) – **nearly done**  
+    Simple app which represents six sorting algorithms (in ascending and descending order) and search in int array  
+    Implementation of bubble sort, selection sort, insertion sort, quick sort, merge sort, radix sort (not included now), binary search.
    
 ### Tasks from Zlatopolsky book
 1. [ClassWorkFirst](https://github.com/Venreaver/ejc13/tree/master/src/main/java/zlatopolsky/chapter_09/ClassWorkFirst.java) - **done**  

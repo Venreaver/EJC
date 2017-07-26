@@ -72,24 +72,23 @@ public class SortsAndSearch {
         int secondArrayIndex = 0;
         int resultIndex = 0;
 
-        while (firstArrayIndex < firstArray.length || secondArrayIndex < secondArray.length) {
-            if (firstArrayIndex < firstArray.length && secondArrayIndex < secondArray.length) {
-                if (firstArray[firstArrayIndex] < secondArray[secondArrayIndex]) {
-                    resultArray[resultIndex] = firstArray[firstArrayIndex++];
-                } else {
-                    resultArray[resultIndex] = secondArray[secondArrayIndex++];
-                }
-            } else if (firstArrayIndex < firstArray.length) {
-                resultArray[resultIndex] = firstArray[firstArrayIndex++];
+        while (firstArrayIndex < firstArray.length && secondArrayIndex < secondArray.length) {
+            if (firstArray[firstArrayIndex] < secondArray[secondArrayIndex]) {
+                resultArray[resultIndex++] = firstArray[firstArrayIndex++];
             } else {
-                resultArray[resultIndex] = secondArray[secondArrayIndex++];
+                resultArray[resultIndex++] = secondArray[secondArrayIndex++];
             }
-            ++resultIndex;
+        }
+        while (firstArrayIndex < firstArray.length) {
+            resultArray[resultIndex++] = firstArray[firstArrayIndex++];
+        }
+        while (secondArrayIndex < secondArray.length) {
+            resultArray[resultIndex++] = secondArray[secondArrayIndex++];
         }
     }
 
     /**
-     * Sort input array with bubble sort algorithm
+     * Sort input array with optimizing bubble sort algorithm
      *
      * @param intArray input array with integer elements
      */
