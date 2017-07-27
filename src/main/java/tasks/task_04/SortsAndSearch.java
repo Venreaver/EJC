@@ -11,35 +11,42 @@ import java.util.Arrays;
  */
 public class SortsAndSearch {
     public static void main(String[] args) {
-        int[] intArrayForBubble = setRandomNumberArray(15);
+        System.out.println("BUBBLE SORT");
+        int[] intArrayForBubble = setRandomNumberArray(110);
         System.out.println(Arrays.toString(intArrayForBubble));
         bubbleSort(intArrayForBubble, false);
         System.out.println(Arrays.toString(intArrayForBubble));
         printBinarySearchResult(0, binarySearch(intArrayForBubble, 0));
-
-        int[] intArrayForSelection = setRandomNumberArray(10);
+        System.out.println("\nSELECTION SORT");
+        int[] intArrayForSelection = setRandomNumberArray(115);
         System.out.println(Arrays.toString(intArrayForSelection));
         selectionSort(intArrayForSelection, false);
         System.out.println(Arrays.toString(intArrayForSelection));
         printBinarySearchResult(0, binarySearch(intArrayForSelection, 0));
-
-        int[] intArrayForInsertion = setRandomNumberArray(15);
+        System.out.println("\nINSERTION SORT");
+        int[] intArrayForInsertion = setRandomNumberArray(110);
         System.out.println(Arrays.toString(intArrayForInsertion));
         insertionSort(intArrayForInsertion, false);
         System.out.println(Arrays.toString(intArrayForInsertion));
         printBinarySearchResult(0, binarySearch(intArrayForInsertion, 0));
-
-        int[] intArrayForQuick = setRandomNumberArray(15);
+        System.out.println("\nQUICK SORT");
+        int[] intArrayForQuick = setRandomNumberArray(115);
         System.out.println(Arrays.toString(intArrayForQuick));
         quickSort(intArrayForQuick, false);
         System.out.println(Arrays.toString(intArrayForQuick));
         printBinarySearchResult(0, binarySearch(intArrayForQuick, 0));
-
-        int[] intArrayForMerge = setRandomNumberArray(15);
+        System.out.println("\nMERGE SORT");
+        int[] intArrayForMerge = setRandomNumberArray(110);
         System.out.println(Arrays.toString(intArrayForMerge));
         mergeSort(intArrayForMerge, false);
         System.out.println(Arrays.toString(intArrayForMerge));
         printBinarySearchResult(0, binarySearch(intArrayForMerge, 0));
+        System.out.println("\nRADIX SORT");
+        int[] intArrayForRadix = setRandomNumberArray(115);
+        System.out.println(Arrays.toString(intArrayForRadix));
+        radixSortLSD(intArrayForRadix);
+        System.out.println(Arrays.toString(intArrayForRadix));
+        printBinarySearchResult(0, binarySearch(intArrayForRadix, 0));
     }
 
     /**
@@ -320,6 +327,135 @@ public class SortsAndSearch {
             return true;
         }
         return false;
+    }
+
+    /**
+     * RADIX SORT: Sort input array with radix sort algorithm
+     *
+     * @param intArray input array which will be sorted
+     */
+    private static void radixSortLSD(int[] intArray) {
+        radixSortLSD(intArray, true);
+    }
+
+    /**
+     * RADIX SORT: Sort input array with radix sort algorithm
+     * <p>
+     * with supporting negative values sorting
+     * <p> 1. Divide input array on two: negative and positive
+     * <p> 2. Mark all negative values in negative array as positive
+     * <p> 3. Sort negative values as positive in reverse order
+     * <p> 4. Mark values in negative array as negative
+     * <p> 5. Merge of two arrays in the given order
+     *
+     * @param intArray input array which will be sorted
+     * @param isAsc    is sorting in ascending order or not
+     */
+    private static void radixSortLSD(int[] intArray, boolean isAsc) {
+        int min = -getMin(intArray);
+        int max = getMax(intArray);
+        int[] negativeArray = new int[countNegative(intArray)];
+        int[] positiveArray = new int[intArray.length - countNegative(intArray)];
+        int positiveIndex = 0;
+        int negativeIndex = 0;
+        for (int number : intArray) {
+            if (number < 0) {
+                negativeArray[negativeIndex++] = -number;
+            } else {
+                positiveArray[positiveIndex++] = number;
+            }
+        }
+        for (int digitPosition = 1; max / digitPosition > 0; digitPosition *= 10) {
+            countSort(positiveArray, digitPosition, isAsc);
+        }
+        for (int digitPosition = 1; min / digitPosition > 0; digitPosition *= 10) {
+            countSort(negativeArray, digitPosition, !isAsc);
+        }
+        for (int i = 0; i < negativeArray.length; ++i) {
+            negativeArray[i] = -negativeArray[i];
+        }
+        if (isAsc) {
+            System.arraycopy(negativeArray, 0, intArray, 0, negativeArray.length);
+            System.arraycopy(positiveArray, 0, intArray, negativeArray.length, positiveArray.length);
+        } else {
+            System.arraycopy(positiveArray, 0, intArray, 0, positiveArray.length);
+            System.arraycopy(negativeArray, 0, intArray, positiveArray.length, negativeArray.length);
+        }
+    }
+
+    /**
+     * RADIX SORT: Counting sort for radix sort (in ascending and descending order)
+     *
+     * @param intArray      input array which will be sorted
+     * @param digitPosition digit position of number
+     * @param isAsc         is sorting in ascending order or not
+     */
+    private static void countSort(int[] intArray, int digitPosition, boolean isAsc) {
+        int result[] = new int[intArray.length];
+        int[] count = new int[10];
+        Arrays.fill(count, 0);
+        for (int number : intArray) {
+            ++count[(number / digitPosition) % 10];
+        }
+        for (int i = 1; i < count.length; ++i) {
+            if (isAsc) {
+                count[i] += count[i - 1];
+            } else {
+                count[count.length - i - 1] += count[count.length - i];
+            }
+        }
+        for (int i = intArray.length - 1; i > -1; --i) {
+            result[--count[(intArray[i] / digitPosition) % 10]] = intArray[i];
+        }
+        System.arraycopy(result, 0, intArray, 0, intArray.length);
+    }
+
+    /**
+     * RADIX SORT: Get max integer element from array
+     *
+     * @param intArray input array with integer elements
+     * @return maximum value from array
+     */
+    private static int getMax(int[] intArray) {
+        int max = intArray[0];
+        for (int i = 1; i < intArray.length; ++i) {
+            if (intArray[i] > max) {
+                max = intArray[i];
+            }
+        }
+        return max;
+    }
+
+    /**
+     * RADIX SORT: Get min integer element from array
+     *
+     * @param intArray input array with integer elements
+     * @return minimum value from array
+     */
+    private static int getMin(int[] intArray) {
+        int min = intArray[0];
+        for (int i = 1; i < intArray.length; ++i) {
+            if (intArray[i] < min) {
+                min = intArray[i];
+            }
+        }
+        return min;
+    }
+
+    /**
+     * RADIX SORT: Count negative integer elements in array
+     *
+     * @param intArray input array with integer elements
+     * @return amount of negative values in array
+     */
+    private static int countNegative(int[] intArray) {
+        int count = 0;
+        for (int number : intArray) {
+            if (number < 0) {
+                ++count;
+            }
+        }
+        return count;
     }
 
     /**
