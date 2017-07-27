@@ -7,9 +7,9 @@
     Duck Race is Casino-style console game with Strategy Pattern inside
 3. [task_03](https://github.com/Venreaver/ejc13/tree/master/src/main/java/tasks/task_03) – **done**  
     Simple BattleShip Game implementation
-4. [task_04](https://github.com/Venreaver/ejc13/tree/master/src/main/java/tasks/task_04) – **nearly done**  
+4. [task_04](https://github.com/Venreaver/ejc13/tree/master/src/main/java/tasks/task_04) – **done**  
     Simple app which represents six sorting algorithms (in ascending and descending order) and search in int array  
-    Implementation of bubble sort, selection sort, insertion sort, quick sort, merge sort, radix sort (supports negative values), binary search.
+    Implementation of bubble sort, selection sort, insertion sort, quick sort, merge sort, lsd radix sort (supports negative values), binary search.
    
 ### Tasks from Zlatopolsky book
 1. [ClassWorkFirst](https://github.com/Venreaver/ejc13/tree/master/src/main/java/zlatopolsky/chapter_09/ClassWorkFirst.java) - **done**  
@@ -26,6 +26,9 @@
 3. [classwork24072017](https://github.com/Venreaver/ejc13/tree/master/src/main/java/classwork/classwork24072017) - **done**  
    [TEST for classwork24072017](https://github.com/Venreaver/ejc13/tree/master/src/test/java/classwork/classwork24072017) - **all 4 tests passed**  
     Simple class which represents implementation of three algorithms: bubble sort, merge sort, binary search  
+4. [classwork27072017](https://github.com/Venreaver/ejc13/tree/master/src/main/java/classwork/classwork27072017) - **done**  
+   [TEST for classwork27072017](https://github.com/Venreaver/ejc13/tree/master/src/test/java/classwork/classwork27072017) - **all 2 tests passed**  
+    Simple class which represents implementation of two sort algorithms: selection sort, lsd radix sort  
 
 ### Additional Tasks
 1. [add_01](https://github.com/Venreaver/ejc13/tree/master/src/main/java/additional/add_01) - **done**  

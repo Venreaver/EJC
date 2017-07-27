@@ -11,42 +11,66 @@ import java.util.Arrays;
  */
 public class SortsAndSearch {
     public static void main(String[] args) {
+        showSortsAndSearch();
+    }
+
+    /**
+     * Print in console arrays before and after each sort, print result of binary search
+     */
+    private static void showSortsAndSearch() {
         System.out.println("BUBBLE SORT");
         int[] intArrayForBubble = setRandomNumberArray(110);
         System.out.println(Arrays.toString(intArrayForBubble));
-        bubbleSort(intArrayForBubble, false);
+        bubbleSort(intArrayForBubble);
         System.out.println(Arrays.toString(intArrayForBubble));
         printBinarySearchResult(0, binarySearch(intArrayForBubble, 0));
+        bubbleSort(intArrayForBubble, false);
+        System.out.println(Arrays.toString(intArrayForBubble));
+
         System.out.println("\nSELECTION SORT");
         int[] intArrayForSelection = setRandomNumberArray(115);
         System.out.println(Arrays.toString(intArrayForSelection));
-        selectionSort(intArrayForSelection, false);
+        selectionSort(intArrayForSelection);
         System.out.println(Arrays.toString(intArrayForSelection));
         printBinarySearchResult(0, binarySearch(intArrayForSelection, 0));
+        selectionSort(intArrayForSelection, false);
+        System.out.println(Arrays.toString(intArrayForSelection));
+
         System.out.println("\nINSERTION SORT");
         int[] intArrayForInsertion = setRandomNumberArray(110);
         System.out.println(Arrays.toString(intArrayForInsertion));
-        insertionSort(intArrayForInsertion, false);
+        insertionSort(intArrayForInsertion);
         System.out.println(Arrays.toString(intArrayForInsertion));
         printBinarySearchResult(0, binarySearch(intArrayForInsertion, 0));
+        insertionSort(intArrayForInsertion, false);
+        System.out.println(Arrays.toString(intArrayForInsertion));
+
         System.out.println("\nQUICK SORT");
         int[] intArrayForQuick = setRandomNumberArray(115);
         System.out.println(Arrays.toString(intArrayForQuick));
-        quickSort(intArrayForQuick, false);
+        quickSort(intArrayForQuick);
         System.out.println(Arrays.toString(intArrayForQuick));
         printBinarySearchResult(0, binarySearch(intArrayForQuick, 0));
+        quickSort(intArrayForQuick, false);
+        System.out.println(Arrays.toString(intArrayForQuick));
+
         System.out.println("\nMERGE SORT");
         int[] intArrayForMerge = setRandomNumberArray(110);
         System.out.println(Arrays.toString(intArrayForMerge));
-        mergeSort(intArrayForMerge, false);
+        mergeSort(intArrayForMerge);
         System.out.println(Arrays.toString(intArrayForMerge));
         printBinarySearchResult(0, binarySearch(intArrayForMerge, 0));
+        mergeSort(intArrayForMerge, false);
+        System.out.println(Arrays.toString(intArrayForMerge));
+
         System.out.println("\nRADIX SORT");
         int[] intArrayForRadix = setRandomNumberArray(115);
         System.out.println(Arrays.toString(intArrayForRadix));
-        radixSortLSD(intArrayForRadix, false);
+        radixSortLSD(intArrayForRadix);
         System.out.println(Arrays.toString(intArrayForRadix));
         printBinarySearchResult(0, binarySearch(intArrayForRadix, 0));
+        radixSortLSD(intArrayForRadix, false);
+        System.out.println(Arrays.toString(intArrayForRadix));
     }
 
     /**
@@ -351,7 +375,7 @@ public class SortsAndSearch {
      * @param intArray input array which will be sorted
      * @param isAsc    is sorting in ascending order or not
      */
-    private static void radixSortLSD(int[] intArray, boolean isAsc) {
+    static void radixSortLSD(int[] intArray, boolean isAsc) {
         int min = -getMin(intArray);
         int max = getMax(intArray);
         int[] negativeArray = new int[countNegative(intArray)];
