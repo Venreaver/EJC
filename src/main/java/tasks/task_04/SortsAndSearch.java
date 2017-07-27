@@ -44,7 +44,7 @@ public class SortsAndSearch {
         System.out.println("\nRADIX SORT");
         int[] intArrayForRadix = setRandomNumberArray(115);
         System.out.println(Arrays.toString(intArrayForRadix));
-        radixSortLSD(intArrayForRadix);
+        radixSortLSD(intArrayForRadix, false);
         System.out.println(Arrays.toString(intArrayForRadix));
         printBinarySearchResult(0, binarySearch(intArrayForRadix, 0));
     }
@@ -334,7 +334,7 @@ public class SortsAndSearch {
      *
      * @param intArray input array which will be sorted
      */
-    private static void radixSortLSD(int[] intArray) {
+    static void radixSortLSD(int[] intArray) {
         radixSortLSD(intArray, true);
     }
 
