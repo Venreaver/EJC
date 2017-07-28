@@ -9,7 +9,7 @@ import java.util.Arrays;
  * quick sort, merge sort, radix sort, binary search
  * <p> Class implements method to form array with random integers, sorting methods and search methods
  */
-public class SortsAndSearch {
+public class Algorithms {
     public static void main(String[] args) {
         showSortsAndSearch();
     }
@@ -89,6 +89,8 @@ public class SortsAndSearch {
 
     /**
      * BUBBLE SORT: Sort input array with optimizing bubble sort algorithm
+     * <p>
+     * <p> Complexity: time -- O(n) - O(n^2) - O(n^2), memory -- O(1)
      *
      * @param intArray input array with integer elements
      */
@@ -98,6 +100,8 @@ public class SortsAndSearch {
 
     /**
      * BUBBLE SORT: Sort input array with optimizing bubble sort algorithm
+     * <p>
+     * <p> Complexity: time -- O(n) - O(n^2) - O(n^2), memory -- O(1)
      *
      * @param intArray input array with integer elements
      * @param isAsc    is sorting in ascending order or not
@@ -124,6 +128,8 @@ public class SortsAndSearch {
 
     /**
      * SELECTION SORT: Sort input list with selection sort algorithm
+     * <p>
+     * <p> Complexity: time -- O(n^2) - O(n^2) - O(n^2), memory -- O(1)
      *
      * @param intArray input array with integer elements
      */
@@ -133,6 +139,8 @@ public class SortsAndSearch {
 
     /**
      * SELECTION SORT: Sort input list with selection sort algorithm
+     * <p>
+     * <p> Complexity: time -- O(n^2) - O(n^2) - O(n^2), memory -- O(1)
      *
      * @param intArray input array with integer elements
      * @param isAsc    is sorting in ascending order or not
@@ -159,6 +167,8 @@ public class SortsAndSearch {
 
     /**
      * INSERTION SORT: Sort input list with insertion sort algorithm
+     * <p>
+     * <p> Complexity: time -- O(n) - O(n^2) - O(n^2), memory -- O(1)
      *
      * @param intArray input array with integer elements
      */
@@ -168,6 +178,8 @@ public class SortsAndSearch {
 
     /**
      * INSERTION SORT: Sort input list with insertion sort algorithm
+     * <p>
+     * <p> Complexity: time -- O(n) - O(n^2) - O(n^2), memory -- O(1)
      *
      * @param intArray input array with integer elements
      * @param isAsc    is sorting in ascending order or not
@@ -191,6 +203,8 @@ public class SortsAndSearch {
 
     /**
      * QUICK SORT: Sort input array with quick sort algorithm with Hoare partitioning
+     * <p>
+     * <p> Complexity: time -- O(n log(n)) - O(n log(n)) - O(n^2), memory -- O(n) / O(log n)
      *
      * @param intArray input array which will be sorted
      */
@@ -200,6 +214,8 @@ public class SortsAndSearch {
 
     /**
      * QUICK SORT: Sort input array with quick sort algorithm with Hoare partitioning
+     * <p>
+     * <p> Complexity: time -- O(n log(n)) - O(n log(n)) - O(n^2), memory -- O(n) / O(log n)
      *
      * @param intArray input array which will be sorted
      * @param isAsc    is sorting in ascending order or not
@@ -211,6 +227,7 @@ public class SortsAndSearch {
     /**
      * QUICK SORT: Sort input array with quick sort algorithm with Hoare partitioning
      * <p>
+     * <p> Complexity: time -- O(n log(n)) - O(n log(n)) - O(n^2), memory -- O(n) / O(log n)
      * <p> 1. Determine pivot index in array
      * <p> if low index < high index:
      * <p> 2. Recursively call of this method for left part of array (from low Index to pivot index inclusive)
@@ -268,6 +285,8 @@ public class SortsAndSearch {
 
     /**
      * MERGE SORT: Sort input array with merge sort algorithm in ascending order
+     * <p>
+     * <p> Complexity: time -- O(n log(n)) /sorted array - O(n)/ - O(n log(n)) - O(n log(n)), memory -- O(n)
      *
      * @param intArray input array with integer elements
      */
@@ -278,6 +297,7 @@ public class SortsAndSearch {
     /**
      * MERGE SORT: Sort input array with merge sort algorithm
      * <p>
+     * <p> Complexity: time -- O(n log(n)) /sorted array - O(n)/ - O(n log(n)) - O(n log(n)), memory -- O(n)
      * <p> 1. Split array into two parts
      * <p> 2. Recursively call this method for each part of array
      * <p> 3. Call method for merge sorted parts of array
@@ -355,6 +375,8 @@ public class SortsAndSearch {
 
     /**
      * RADIX SORT: Sort input array with radix sort algorithm
+     * <p>
+     * <p> Complexity: time -- O(nk) - O(nk) - O(nk), memory -- O(n + k)
      *
      * @param intArray input array which will be sorted
      */
@@ -365,50 +387,70 @@ public class SortsAndSearch {
     /**
      * RADIX SORT: Sort input array with radix sort algorithm
      * <p>
-     * with supporting negative values sorting
+     * <p> Complexity: time -- O(nk) - O(nk) - O(nk), memory -- O(n + k)
+     * <p> Supporting negative values sorting:
      * <p> 1. Divide input array on two: negative and positive
      * <p> 2. Mark all negative values in negative array as positive
      * <p> 3. Sort negative values as positive in reverse order
      * <p> 4. Mark values in negative array as negative
      * <p> 5. Merge of two arrays in the given order
+     * <p> For arrays with only positive values just sort them without division in two arrays
      *
      * @param intArray input array which will be sorted
      * @param isAsc    is sorting in ascending order or not
      */
     static void radixSortLSD(int[] intArray, boolean isAsc) {
-        int min = -getMin(intArray);
-        int max = getMax(intArray);
-        int[] negativeArray = new int[countNegative(intArray)];
-        int[] positiveArray = new int[intArray.length - countNegative(intArray)];
-        int positiveIndex = 0;
-        int negativeIndex = 0;
-        for (int number : intArray) {
-            if (number < 0) {
-                negativeArray[negativeIndex++] = -number;
-            } else {
-                positiveArray[positiveIndex++] = number;
+        int min = getMin(intArray);
+        if (min < 0) {
+            int[] negativeArray = new int[countNegative(intArray)];
+            int[] positiveArray = new int[intArray.length - countNegative(intArray)];
+            int positiveIndex = 0;
+            int negativeIndex = 0;
+            for (int number : intArray) {
+                if (number < 0) {
+                    negativeArray[negativeIndex++] = -number;
+                } else {
+                    positiveArray[positiveIndex++] = number;
+                }
             }
-        }
-        for (int digitPosition = 1; max / digitPosition > 0; digitPosition *= 10) {
-            countSort(positiveArray, digitPosition, isAsc);
-        }
-        for (int digitPosition = 1; min / digitPosition > 0; digitPosition *= 10) {
-            countSort(negativeArray, digitPosition, !isAsc);
-        }
-        for (int i = 0; i < negativeArray.length; ++i) {
-            negativeArray[i] = -negativeArray[i];
-        }
-        if (isAsc) {
-            System.arraycopy(negativeArray, 0, intArray, 0, negativeArray.length);
-            System.arraycopy(positiveArray, 0, intArray, negativeArray.length, positiveArray.length);
+            positiveValuesRadixSortLSD(positiveArray, isAsc);
+            positiveValuesRadixSortLSD(negativeArray, !isAsc);
+            for (int i = 0; i < negativeArray.length; ++i) {
+                negativeArray[i] = -negativeArray[i];
+            }
+            if (isAsc) {
+                System.arraycopy(negativeArray, 0, intArray, 0, negativeArray.length);
+                System.arraycopy(positiveArray, 0, intArray, negativeArray.length, positiveArray.length);
+            } else {
+                System.arraycopy(positiveArray, 0, intArray, 0, positiveArray.length);
+                System.arraycopy(negativeArray, 0, intArray, positiveArray.length, negativeArray.length);
+            }
         } else {
-            System.arraycopy(positiveArray, 0, intArray, 0, positiveArray.length);
-            System.arraycopy(negativeArray, 0, intArray, positiveArray.length, negativeArray.length);
+            positiveValuesRadixSortLSD(intArray, isAsc);
+        }
+    }
+
+    /**
+     * RADIX SORT: Sort input array with radix sort algorithm (for positive values)
+     * <p>
+     * <p> Complexity: time -- O(nk) - O(nk) - O(nk), memory -- O(n + k)
+     * <p> 1. Get max value from array to define max digit position
+     * <p> 2. Call counting sort for each digit position
+     *
+     * @param intArray input array which will be sorted
+     * @param isAsc    is sorting in ascending order or not
+     */
+    private static void positiveValuesRadixSortLSD(int[] intArray, boolean isAsc) {
+        int max = getMax(intArray);
+        for (int digitPosition = 1; max / digitPosition > 0; digitPosition *= 10) {
+            countSort(intArray, digitPosition, isAsc);
         }
     }
 
     /**
      * RADIX SORT: Counting sort for radix sort (in ascending and descending order)
+     * <p>
+     * <p> Complexity for counting sort: time -- O(n) - O(n) - O(n), memory -- O(n + k)
      *
      * @param intArray      input array which will be sorted
      * @param digitPosition digit position of number
@@ -485,7 +527,8 @@ public class SortsAndSearch {
     /**
      * BINARY SEARCH: Search index with key value in sorted array
      * <p>
-     * Array must be sorted otherwise result will be undefined
+     * <p> Array must be sorted otherwise result will be undefined
+     * <p> Complexity: time -- O(log(n)) - O(log(n)), memory -- O(1)
      *
      * @param intArray array to be searched
      * @param key      value to be searched for
@@ -498,7 +541,8 @@ public class SortsAndSearch {
     /**
      * BINARY SEARCH: Search index with key value in sorted array
      * <p>
-     * Array must be sorted otherwise result will be undefined
+     * <p> Array must be sorted otherwise result will be undefined
+     * <p> Complexity: time -- O(log(n)) - O(log(n)), memory -- O(1)
      *
      * @param intArray   array to be searched
      * @param firstIndex index of the first element (inclusive) to be searched

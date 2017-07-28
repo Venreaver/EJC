@@ -8,9 +8,10 @@
 3. [task_03](https://github.com/Venreaver/ejc13/tree/master/src/main/java/tasks/task_03) – **done**  
     Simple BattleShip Game implementation
 4. [task_04](https://github.com/Venreaver/ejc13/tree/master/src/main/java/tasks/task_04) – **done**  
+   [TEST for task_04](https://github.com/Venreaver/ejc13/tree/master/src/test/java/tasks/task_04) - **all 14 tests passed**  
     Simple app which represents six sorting algorithms (in ascending and descending order) and search in int array  
-    Implementation of bubble sort, selection sort, insertion sort, quick sort, merge sort, lsd radix sort (supports negative values), binary search.
-   
+    Implementation of bubble sort, selection sort, insertion sort, quick sort, merge sort, lsd radix sort (supports negative values), binary search.  
+       
 ### Tasks from Zlatopolsky book
 1. [ClassWorkFirst](https://github.com/Venreaver/ejc13/tree/master/src/main/java/zlatopolsky/chapter_09/ClassWorkFirst.java) - **done**  
     Simple app which represents solution of tasks No. 9.43, 9.116
