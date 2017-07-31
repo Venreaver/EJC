@@ -73,10 +73,10 @@ public class SortsAndSearch {
         int resultIndex = 0;
 
         while (firstArrayIndex < firstArray.length && secondArrayIndex < secondArray.length) {
-            if (firstArray[firstArrayIndex] < secondArray[secondArrayIndex]) {
-                resultArray[resultIndex++] = firstArray[firstArrayIndex++];
-            } else {
+            if (secondArray[secondArrayIndex] < firstArray[firstArrayIndex]) {
                 resultArray[resultIndex++] = secondArray[secondArrayIndex++];
+            } else {
+                resultArray[resultIndex++] = firstArray[firstArrayIndex++];
             }
         }
         while (firstArrayIndex < firstArray.length) {

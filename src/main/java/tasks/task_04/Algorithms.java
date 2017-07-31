@@ -333,16 +333,16 @@ public class Algorithms {
 
         while (firstArrayIndex < firstArray.length && secondArrayIndex < secondArray.length) {
             if (isAsc) {
-                if (firstArray[firstArrayIndex] < secondArray[secondArrayIndex]) {
-                    resultArray[resultIndex++] = firstArray[firstArrayIndex++];
-                } else {
+                if (secondArray[secondArrayIndex] < firstArray[firstArrayIndex]) {
                     resultArray[resultIndex++] = secondArray[secondArrayIndex++];
+                } else {
+                    resultArray[resultIndex++] = firstArray[firstArrayIndex++];
                 }
             } else {
-                if (firstArray[firstArrayIndex] > secondArray[secondArrayIndex]) {
-                    resultArray[resultIndex++] = firstArray[firstArrayIndex++];
-                } else {
+                if (secondArray[secondArrayIndex] > firstArray[firstArrayIndex]) {
                     resultArray[resultIndex++] = secondArray[secondArrayIndex++];
+                } else {
+                    resultArray[resultIndex++] = firstArray[firstArrayIndex++];
                 }
             }
         }
