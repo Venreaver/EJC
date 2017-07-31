@@ -107,9 +107,9 @@ public class Algorithms {
      * @param isAsc    is sorting in ascending order or not
      */
     static void bubbleSort(int[] intArray, boolean isAsc) {
-        for (int i = 0; i < intArray.length; ++i) {
+        for (int i = 0; i < intArray.length - 1; ++i) {
             boolean isSwapped = false;
-            for (int j = 0; j < intArray.length - i - 1; ++j) {
+            for (int j = 0; j < intArray.length - 1 - i; ++j) {
                 if (isAsc) {
                     if (intArray[j] > intArray[j + 1]) {
                         isSwapped = intSwapInArray(intArray, j, j + 1);
@@ -159,9 +159,7 @@ public class Algorithms {
                     }
                 }
             }
-            if (minOrMax != i) {
-                intSwapInArray(intArray, minOrMax, i);
-            }
+            intSwapInArray(intArray, minOrMax, i);
         }
     }
 

@@ -63,11 +63,9 @@ public class Sorts {
                     minOrMax = j;
                 }
             }
-            if (minOrMax != i) {
-                int temp = intArray[minOrMax];
-                intArray[minOrMax] = intArray[i];
-                intArray[i] = temp;
-            }
+            int temp = intArray[minOrMax];
+            intArray[minOrMax] = intArray[i];
+            intArray[i] = temp;
         }
     }
 
