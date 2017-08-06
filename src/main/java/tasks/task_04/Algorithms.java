@@ -551,10 +551,9 @@ public class Algorithms {
     private static int binarySearch(int[] intArray, int firstIndex, int lastIndex, int key) {
         while (firstIndex <= lastIndex) {
             int midIndex = (firstIndex + lastIndex) >>> 1;
-            int midKey = intArray[midIndex];
-            if (midKey < key) {
+            if (intArray[midIndex] < key) {
                 firstIndex = midIndex + 1;
-            } else if (midKey > key) {
+            } else if (intArray[midIndex] > key) {
                 lastIndex = midIndex - 1;
             } else {
                 return midIndex;
