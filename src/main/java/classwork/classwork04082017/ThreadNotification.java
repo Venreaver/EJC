@@ -1,8 +1,14 @@
 package classwork.classwork04082017;
 
-public class MainWait {
+public class ThreadNotification {
     private static final Object key = new Object();
 
+    /**
+     * example of notify()/notifyAll() and wait() methods cooperation
+     *
+     * @param args
+     * @throws InterruptedException
+     */
     public static void main(String[] args) throws InterruptedException {
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -20,14 +26,11 @@ public class MainWait {
                         e.printStackTrace();
                     }
                 }
-//                synchronized (key) {
-//                    key.notifyAll();
-//                }
             }
         });
         System.err.println("start...");
         thread.start();
-        // нельзя испольозовать wait и notify в небезопасных частях кода (могут обратиться сразу несколько потоков к key)
+        // be careful: lock "key" have to be in safe-zone
         synchronized (key) {
             key.wait();
         }

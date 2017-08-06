@@ -1,6 +1,11 @@
 package classwork.classwork04082017;
 
-public class Yeild {
+public class ThreadYield {
+    /**
+     * Example of using the method yield()
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Runnable runnable = new Runnable() {
             @Override

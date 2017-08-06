@@ -1,6 +1,12 @@
 package classwork.classwork04082017;
 
-public class Main {
+public class ThreadJoiner {
+    /**
+     * Join thread to main thread before main thread ends
+     *
+     * @param args
+     * @throws InterruptedException
+     */
     public static void main(String[] args) throws InterruptedException {
         Thread thread = new Thread(new Runnable() {
             @Override
