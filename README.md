@@ -11,7 +11,11 @@
    [TEST for task_04](https://github.com/Venreaver/ejc13/tree/master/src/test/java/tasks/task_04) - **all 14 tests passed**  
     Simple app which represents six sorting algorithms (in ascending and descending order) and search in int array  
     Implementation of bubble sort, selection sort, insertion sort, quick sort, merge sort, lsd radix sort (supports negative values), binary search.  
-       
+3. [task_05](https://github.com/Venreaver/ejc13/tree/master/src/main/java/tasks/task_05) – **done**  
+    Simple app represents parsing .csv data files in multi threads  
+    There are 20 .csv data-files with attributes (id,url,time,user). This app parse data in multi threads and creates output report (.csv file with attributes: user,url,time).  
+    Report contains information about sum time each user spent on different urls
+    
 ### Tasks from Zlatopolsky book
 1. [ClassWorkFirst](https://github.com/Venreaver/ejc13/tree/master/src/main/java/zlatopolsky/chapter_09/ClassWorkFirst.java) - **done**  
     Simple app which represents solution of tasks No. 9.43, 9.116
@@ -30,6 +34,8 @@
 4. [classwork27072017](https://github.com/Venreaver/ejc13/tree/master/src/main/java/classwork/classwork27072017) - **done**  
    [TEST for classwork27072017](https://github.com/Venreaver/ejc13/tree/master/src/test/java/classwork/classwork27072017) - **all 2 tests passed**  
     Simple class which represents implementation of two sort algorithms: selection sort, lsd radix sort  
+5. [classwork04082017](https://github.com/Venreaver/ejc13/tree/master/src/main/java/classwork/classwork04082017) - **done**  
+    Simple class which represents how notify()/notifyAll(), wait(), yield() methods can be used  
 
 ### Additional Tasks
 1. [add_01](https://github.com/Venreaver/ejc13/tree/master/src/main/java/additional/add_01) - **done**  
