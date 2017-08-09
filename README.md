@@ -35,7 +35,7 @@
    [TEST for classwork27072017](https://github.com/Venreaver/ejc13/tree/master/src/test/java/classwork/classwork27072017) - **all 2 tests passed**  
     Simple class which represents implementation of two sort algorithms: selection sort, lsd radix sort  
 5. [classwork04082017](https://github.com/Venreaver/ejc13/tree/master/src/main/java/classwork/classwork04082017) - **done**  
-    Simple class which represents how notify()/notifyAll(), wait(), yield() methods can be used  
+    Simple class which represents how join(), notify()/notifyAll(), wait(), yield() methods can be used  
 
 ### Additional Tasks
 1. [add_01](https://github.com/Venreaver/ejc13/tree/master/src/main/java/additional/add_01) - **done**  
