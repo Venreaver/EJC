@@ -27,7 +27,8 @@ class CSVDataHandler {
 
     CSVDataHandler(String inputFolderPath) {
         this.inputFolderPath = inputFolderPath;
-        this.csvFilesArray = new File(inputFolderPath).listFiles((dir, name) -> name.toLowerCase().endsWith(".csv"));
+        this.csvFilesArray = new File(inputFolderPath)
+                .listFiles((dir, name) -> name.toLowerCase().endsWith(Config.FILE_EXTENSION));
         this.reportMap = new ConcurrentHashMap<>();
     }
 
@@ -62,7 +63,7 @@ class CSVDataHandler {
     private void createTimeReport() {
         String outPutPath = inputFolderPath + Config.OUTPUT_FOLDER_NAME;
         if (new File(outPutPath).mkdir()) {
-            File timeReportFile = new File(outPutPath, Config.OUTPUT_FILE_NAME);
+            File timeReportFile = new File(outPutPath, Config.OUTPUT_FILE_NAME + Config.FILE_EXTENSION);
             try (FileWriter writer = new FileWriter(timeReportFile, false)) {
                 writer.write(Config.REPORT_ATTRIBUTES);
                 Map<String, Long> sortedMap = new TreeMap<>(reportMap);
