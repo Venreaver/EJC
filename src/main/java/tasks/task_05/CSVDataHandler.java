@@ -97,7 +97,7 @@ class CSVDataHandler {
                 while ((fileLine = reader.readLine()) != null) {
                     String[] values = fileLine.split(",");
                     long timeValue = values[2].matches("\\d*") ? Long.parseLong(values[2]) : 0;
-                    reportMap.merge(values[3] + ',' + values[1], timeValue,(exTime, newTime) -> exTime + newTime);
+                    reportMap.merge(values[3] + ',' + values[1], timeValue, (exTime, newTime) -> exTime + newTime);
                 }
             } catch (IOException e) {
                 System.err.println(Config.ERROR + e.getMessage());
