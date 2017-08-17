@@ -1,7 +1,7 @@
 package tasks.task_05;
 
 class Config {
-    static final String INPUT_FOLDER_PATH = "./src/main/java/tasks/task_05/data";
+    static final String INPUT_FOLDER_PATH = "./src/main/resources/task_05/data";
     static final String OUTPUT_FOLDER_NAME = "/output";
     static final String OUTPUT_FILE_NAME = "/Report";
     static final String FILE_EXTENSION = ".csv";
