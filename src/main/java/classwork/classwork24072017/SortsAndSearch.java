@@ -46,7 +46,7 @@ public class SortsAndSearch {
      * @param intArray input array with integer elements
      */
     static void mergeSort(int[] intArray) {
-        if (intArray.length == 1) {
+        if (intArray.length < 2) {
             return;
         }
         int[] firstArray = new int[intArray.length >>> 1];

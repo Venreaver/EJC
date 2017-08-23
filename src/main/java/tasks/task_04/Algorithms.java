@@ -304,7 +304,7 @@ public class Algorithms {
      * @param isAsc    is sorting in ascending order or not
      */
     static void mergeSort(int[] intArray, boolean isAsc) {
-        if (intArray.length == 1) {
+        if (intArray.length < 2) {
             return;
         }
         int[] firstArray = new int[intArray.length >>> 1];
