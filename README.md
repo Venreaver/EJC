@@ -13,7 +13,7 @@
     Implementation of bubble sort, selection sort, insertion sort, quick sort, merge sort, lsd radix sort (supports negative values), binary search.  
 3. [task_05](https://github.com/Venreaver/ejc13/tree/master/src/main/java/tasks/task_05) – **done**  
     Simple app represents parsing .csv data files in multi threads  
-    There are 20 .csv data-files with attributes (id,url,time,user). This app parse data in multi threads and creates output report (.csv file with attributes: user,url,time).  
+    There are 20 ".csv" data-files with attributes (id,url,time,user). This app parse data in multi threads and creates output report (.csv file with attributes: user,url,time).  
     Report contains information about sum time each user spent on different urls
     
 ### Tasks from Zlatopolsky book
